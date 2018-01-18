@@ -4,23 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
+    <script id="coin-template" type="text/x-handlebars-template" >
+      <tr id="{{short}}">
+          <td>{{long}} </td>
+          <td>$ {{mktcap}}</td>
+          <td>$ {{price}}</td>
+          <td>$ {{vwapData}}</td>
+          <td>{{supply}}</td>
+          <td>$ {{volume}}</td>
+          <td>%{{cap24hrChange}}</td>
+        </tr>
+    </script>
 </head>
 <body>
 
-  <section id="coin-list">
-    <ul id="coin-name"></ul>
+  <section id="coin-list" class="page">
+    <table id="coin-name">
+      <tbody>
+        <tr id="coin-header">
+          <th>Name</th>
+          <th>Market Cap</th>
+          <th>Price</th>
+          <th>24 hrs VWAP</th>
+          <th>Available Supply</th>
+          <th>24 hr. Volume</th>
+          <th>% 24 hr</th>
+          </tr>
+
+          
+      </tbody>
+    </table>
   </section>
 
-  <section id="news-page"></section>
+  <section id="news-page" class="page"></section>
+  <section id="coin-detail-page" class="page"></section>
+  
 
-  <section id="howto-page"></section>
+  <section id="howto-page" class="page"></section>
     
   <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <!-- <script src="server.js"></script> -->
-  <script src="scripts/coin-view.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+  <script src="scripts/models/coins.js"></script>
+  <script src="scripts/views/coin-view.js"></script>
+  <script src="scripts/controllers/routes.js"></script>
+
+
+
 </body>
 </html>
