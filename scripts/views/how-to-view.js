@@ -1,15 +1,19 @@
-if (Window.localStorage.getItem('beenHere')){
-    if(){
-        $('#intro').hide();
-    }else{}
-}else{}
 
-$('#intro').dialog()
+if (!localStorage.getItem('beenHere')){
+   console.log(localStorage.getItem('beenHere'))
+   $('#intro').dialog();
+}else{
+    $('#intro').hide();
+}
+    
+  
+    
 $('#intro').on('click','button',function(e){
     e.preventDefault(); 
     let answer = $(event.target).attr('id')
-
-    answer === 'yes'?
+    
+    if(answer === 'yes')localStorage.setItem('beenHere',true)
+    
 })
 
 $('.page').hide()
