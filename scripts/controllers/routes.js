@@ -10,8 +10,18 @@ page('/*', (ctx,next) => {
     next()
 })
 
-page('/front', () => {
+page('/', () => {
     app.Coin.fetchAll().then(coins => {
+       console.log(coins)
         app.coinsListView.init(coins);
     })
 })
+
+page('/coin/:id',(ctx) => {
+    console.log(ctx.params.id)
+    app.Coin.fetchOne(ctx.params.id).then(coin => {
+        console.log('this is from route', coin);
+        app.coinDetailView.init(coin);
+    })
+})
+page.start()

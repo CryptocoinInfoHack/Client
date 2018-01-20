@@ -7,8 +7,19 @@
     <link rel="stylesheet" href="styles.css">
     <title>Document</title>
     <script id="coin-template" type="text/x-handlebars-template" >
-      <tr id="{{short}}">
-          <td>{{long}} </td>
+      <tr data-id="{{short}}">
+          <td data-id="{{short}}">{{long}} </td>
+          <td>$ {{mktcap}}</td>
+          <td>$ {{price}}</td>
+          <td>$ {{vwapData}}</td>
+          <td>{{supply}}</td>
+          <td>$ {{volume}}</td>
+          <td>%{{cap24hrChange}}</td>
+        </tr>
+    </script>
+    <script id="coin-detail-template" type="text/x-handlebars-template" >
+      <tr data-id="{{short}}">
+          <td data-id="{{short}}">{{long}} </td>
           <td>$ {{mktcap}}</td>
           <td>$ {{price}}</td>
           <td>$ {{vwapData}}</td>
@@ -52,8 +63,10 @@
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src="scripts/models/coins.js"></script>
   <script src="scripts/views/coin-view.js"></script>
+  <script src="scripts/views/coin-detail-view.js"></script>
   <script src="scripts/controllers/routes.js"></script>
-
+  
+  
 
 
 </body>
