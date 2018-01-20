@@ -11,9 +11,16 @@ var app = app || {};
 
 
   coins.forEach(coin => {
-      console.log(coin.long);
       $('#coin-name').append(template(coin));
   })
+
+  $('#coin-list').on('click', 'tr', event => {
+      let coinId = $(event.target).data('id');
+      $('#coin-list').hide();
+      page(`/coin/${coinId.toUpperCase}`);
+  })
+
+  $('#coin-list').show();
  }
 
  module.coinsListView = coinsListView;
