@@ -19,6 +19,7 @@ page('/', () => {
 })
 
 page('/coin/:id',(ctx) => {
+    $('coin-detail-page tr:nth-child(n+2)').remove()
     console.log(ctx.params.id)
     app.Coin.fetchOne(ctx.params.id).then(coin => {
         console.log('this is from route', coin);
