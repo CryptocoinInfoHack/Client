@@ -11,6 +11,7 @@ page('/*', (ctx,next) => {
 })
 
 page('/', () => {
+ $('#coin-name tr:nth-child(n+2)').remove()
     app.Coin.fetchAll().then(coins => {
        console.log(coins)
         app.coinsListView.init(coins);
@@ -26,6 +27,7 @@ page('/coin/:id',(ctx) => {
 })
 
 page('/news', () => {
+    $('#news-list').empty();
     app.News.fetchAll().then(news => {
        console.log(news)
         app.newsView.init(news);

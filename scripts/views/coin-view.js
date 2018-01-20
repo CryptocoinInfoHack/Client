@@ -9,7 +9,6 @@ var app = app || {};
 
   let template = Handlebars.compile(source)
 
-
   coins.forEach(coin => {
       $('#coin-name').append(template(coin));
   })
@@ -25,10 +24,8 @@ var app = app || {};
      let select = $('#filter').find(":selected").attr('value');
     // let selectedId = $(event.target).attr();
     console.log('inside filter', `#${select}`);
-    $(`#${select}`).toggleClass('filter');
+    $(`td[data-id="${select}"], th[data-id="${select}"]`).toggleClass('filter');
     $('.filter').hide();
-
-
  })
 
  module.coinsListView = coinsListView;
