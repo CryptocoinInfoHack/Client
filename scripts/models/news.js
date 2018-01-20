@@ -2,7 +2,7 @@ var app = app || {};
 
 (module => {
     const __NEWS_API__ = 'https://newsapi.org/v2/everything';
-    const TOKEN = 'cac351c8867140f7872d3ddfda09f782';
+    const TOKEN = ';
 
     function News () {
 
