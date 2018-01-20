@@ -10,12 +10,12 @@
     <script id="coin-template" type="text/x-handlebars-template" >
       <tr data-id="{{short}}">
           <td data-id="{{short}}">{{long}} </td>
-          <td>$ {{mktcap}}</td>
-          <td>$ {{price}}</td>
-          <td>$ {{vwapData}}</td>
-          <td>{{supply}}</td>
-          <td>$ {{volume}}</td>
-          <td>%{{cap24hrChange}}</td>
+          <td data-id="mktcap" class="filter">$ {{mktcap}}</td>
+          <td data-id="price"class="filter">$ {{price}}</td>
+          <td data-id="vwapData"class="filter">$ {{vwapData}}</td>
+          <td data-id="supply"class="filter">{{supply}}</td>
+          <td data-id="volume"class="filter">$ {{volume}}</td>
+          <td data-id="cap24hrChange" class="filter">%{{cap24hrChange}}</td>
         </tr>
     </script>
     <script id="coin-detail-template" type="text/x-handlebars-template" >
@@ -50,32 +50,33 @@
     <h1>CyrtoInfoHack</h1>
   <ul id="navbar">
     <li><a href="/news">News</a></li>
-    <li><a href="About Us"></a></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="About Us">About US</a></li>
   </ul>
   </header>
 
   <section id="coin-list" class="page">
     <div id="filter">
       <select>
-        <option class="filter">Name</option>
-        <option class="filter">Market Cap</option>
-        <option class="filter">Price</option>
-        <option class="filter">24 hrs VWAP</option>
-        <option class="filter">Available Supply</option>
-        <option class="filter">24 hr. Volume</option>
-        <option class="filter">% 24 hr</option>
+        <option>Name</option>
+        <option value="mktcap">Market Cap</option>
+        <option value="price">Price</option>
+        <option value="vwapData">24 hrs VWAP</option>
+        <option value="supply">Available Supply</option>
+        <option value="volume">24 hr. Volume</option>
+        <option value="cap24hrChange">% 24 hr</option>
       </select>
     </div>
     <table id="coin-name">
       <tbody>
         <tr id="coin-header">
           <th>Name</th>
-          <th>Market Cap</th>
-          <th>Price</th>
-          <th>24 hrs VWAP</th>
-          <th>Available Supply</th>
-          <th>24 hr. Volume</th>
-          <th>% 24 hr</th>
+          <th data-id="mktcap" class="filter">Market Cap</th>
+          <th data-id="price"class="filter">Price</th>
+          <th data-id="vwapData"class="filter">24 hrs VWAP</th>
+          <th data-id="supply"class="filter">Available Supply</th>
+          <th data-id="volume"class="filter">24 hr. Volume</th>
+          <th data-id="cap24hrChange" class="filter">% 24 hr</th>
           </tr>
 
 
