@@ -6,7 +6,6 @@ if (!localStorage.getItem('beenHere')){
     $('#intro').hide();
 }
     
-  
     
 $('#intro').on('click','button',function(e){
     e.preventDefault(); 

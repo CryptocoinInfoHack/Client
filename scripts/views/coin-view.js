@@ -13,7 +13,6 @@ var app = app || {};
   coins.forEach(coin => {
       $('#coin-name').append(template(coin));
   })
-
   $('#coin-list').on('click', 'tr', event => {
       let coinId = $(event.target).data('id');
       $('#coin-list').hide();
@@ -22,6 +21,15 @@ var app = app || {};
 
   $('#coin-list').show();
  }
+ $('#filter').on('change',function(event){
+     let select = $('#filter').find(":selected").attr('value');
+    // let selectedId = $(event.target).attr();
+    console.log('inside filter', `#${select}`);
+    $(`#${select}`).toggleClass('filter');
+    $('.filter').hide();
+
+
+ })
 
  module.coinsListView = coinsListView;
 })(app)
