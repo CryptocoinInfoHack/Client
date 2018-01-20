@@ -24,4 +24,11 @@ page('/coin/:id',(ctx) => {
         app.coinDetailView.init(coin);
     })
 })
+
+page('/news', () => {
+    app.News.fetchAll().then(news => {
+       console.log(news)
+        app.newsView.init(news);
+    })
+})
 page.start()

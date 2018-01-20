@@ -20,6 +20,7 @@
     <script id="coin-detail-template" type="text/x-handlebars-template" >
       <tr data-id="{{short}}">
           <td data-id="{{short}}">{{long}} </td>
+          <td>{{long}} </td>
           <td>$ {{mktcap}}</td>
           <td>$ {{price}}</td>
           <td>$ {{vwapData}}</td>
@@ -28,8 +29,18 @@
           <td>%{{cap24hrChange}}</td>
         </tr>
     </script>
+
+    <script id="news-template" type="text/x-handlebars-template" >
+      <li>
+        <div class="article-image"><img src="{{urlToImage}}"></div>
+        <a href="{{url}}">{{title}}</a>
+      </li>
+    </script>
 </head>
 <body>
+  <ul id="navbar">
+    <li><a href="/news">News</a></li>
+  </ul>
 
   <section id="coin-list" class="page">
     <table id="coin-name">
@@ -44,17 +55,17 @@
           <th>% 24 hr</th>
           </tr>
 
-          
+
       </tbody>
     </table>
   </section>
 
-  <section id="news-page" class="page"></section>
   <section id="coin-detail-page" class="page"></section>
-  
-
   <section id="howto-page" class="page"></section>
-    
+  <section id="news-page" class="page">
+    <ul id="news-list"></ul>
+  </section>
+
   <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -62,12 +73,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src="scripts/models/coins.js"></script>
+  <script src="scripts/models/news.js"></script>
+  <script src="scripts/views/news-view.js"></script>
   <script src="scripts/views/coin-view.js"></script>
   <script src="scripts/views/coin-detail-view.js"></script>
   <script src="scripts/controllers/routes.js"></script>
-  
-  
-
 
 </body>
 </html>
