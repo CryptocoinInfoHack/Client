@@ -1,7 +1,7 @@
 var app = app || {};
 
 (module => {
-    const __COINCAPAPI__ = 'http://coincap.io/';
+    const __COINCAPAPI__ = 'https://coincap.io/';
 
     function Coin() {};
 
