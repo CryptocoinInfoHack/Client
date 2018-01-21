@@ -1,6 +1,6 @@
 if(window.location.pathname !== '/') {
     page.base('/Client')
-    console.log('We got you')
+    console.log('We got you-1')
 }
 
 page('/*', (ctx,next) => {
@@ -20,7 +20,7 @@ page('/', () => {
     app.Coin.fetchAll().then(coins => {
        console.log(coins)
         app.coinsListView.init(coins);
-    })
+    }).catch(error => console.error(error))
 })
 
 page('/coin/:id',(ctx) => {
