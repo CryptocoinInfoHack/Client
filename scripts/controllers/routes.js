@@ -1,6 +1,6 @@
 if(window.location.pathname !== '/') {
     page.base('/Client')
-    console.log('We got you-1')
+    console.log('We got you-2')
 }
 
 page('/*', (ctx,next) => {
@@ -17,6 +17,7 @@ page('/*', (ctx,next) => {
 
 page('Client/', () => {
  $('#coin-name tr:nth-child(n+2)').remove()
+ console.log('Take me Home')
     app.Coin.fetchAll().then(coins => {
        console.log(coins)
         app.coinsListView.init(coins);
