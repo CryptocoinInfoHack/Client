@@ -19,7 +19,7 @@ page('/', () => {
 })
 
 page('/coin/:id',(ctx) => {
-    console.log(ctx.params.id)
+    console.log(ctx.params.id);
     app.Coin.fetchOne(ctx.params.id).then(coin => {
         console.log('this is from route', coin);
         app.coinDetailView.init(coin);

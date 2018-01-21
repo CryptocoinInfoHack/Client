@@ -1,0 +1,42 @@
+.tour-backdrop {
+  background-color: #000;
+  filter: alpha(opacity = 80);
+  opacity: .8;
+  position: absolute;
+  z-index: 1100;
+}
+
+.popover[class*="tour-"] {
+  z-index: 1102;
+
+  .popover-navigation {
+    overflow: hidden;
+    padding: 9px 14px;
+
+    *[data-role="end"] {
+      float: right;
+    }
+
+    *[data-role="prev"],
+    *[data-role="next"],
+    *[data-role="end"] {
+      cursor: pointer;
+
+      &.disabled {
+        cursor: default;
+      }
+    }
+  }
+
+  &.orphan {
+    left: 50%;
+    margin-top: 0;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    .arrow {
+      display: none;
+    }
+  }
+}

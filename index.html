@@ -4,29 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="assets/bootstrap-tour-master/build/css/bootstrap-tour-standalone.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="modules.css">
+
     <title>Document</title>
     <script id="coin-template" type="text/x-handlebars-template" >
       <tr data-id="{{short}}">
           <td data-id="{{short}}">{{long}} </td>
-          <td data-id="mktcap" class="filter">$ {{mktcap}}</td>
-          <td data-id="price"class="filter">$ {{price}}</td>
-          <td data-id="vwapData"class="filter">$ {{vwapData}}</td>
+          <td data-id="mktcap" class="filter">${{mktcap}}</td>
+          <td data-id="price"class="filter">${{price}}</td>
+          <td data-id="vwapData"class="filter">${{vwapData}}</td>
           <td data-id="supply"class="filter">{{supply}}</td>
-          <td data-id="volume"class="filter">$ {{volume}}</td>
+          <td data-id="volume"class="filter">${{volume}}</td>
           <td data-id="cap24hrChange" class="filter">%{{cap24hrChange}}</td>
         </tr>
     </script>
+
+    <script id="trades-template" type="text/x-handlebars-template" >
+      <tr data-id="{{short}}">
+          <td data-id="{{coin}}">{{coin}}</td>
+      </tr>
+    </script>
+
     <script id="coin-detail-template" type="text/x-handlebars-template" >
       <tr data-id="{{short}}">
           <td data-id="{{short}}">{{long}} </td>
           <td>{{long}} </td>
-          <td>$ {{mktcap}}</td>
-          <td>$ {{price}}</td>
-          <td>$ {{vwapData}}</td>
+          <td>${{mktcap}}</td>
+          <td>${{price}}</td>
+          <td>${{vwapData}}</td>
           <td>{{supply}}</td>
-          <td>$ {{volume}}</td>
+          <td>${{volume}}</td>
           <td>%{{cap24hrChange}}</td>
         </tr>
     </script>
@@ -90,6 +101,7 @@
   <section id="news-page" class="page">
     <ul id="news-list"></ul>
   </section>
+  <section id="trades-page" class="page"></section>
 
   <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -100,15 +112,18 @@
   crossorigin="anonymous"></script>
   <!-- <script src="server.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="assets/bootstrap-tour-master/build/js/bootstrap-tour-standalone.min.js"></script>
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.slim.js"></script>
   <script src="scripts/views/how-to-view.js"></script>
-  
   <script src="scripts/models/coins.js"></script>
   <script src="scripts/models/news.js"></script>
   <script src="scripts/views/news-view.js"></script>
   <script src="scripts/views/coin-view.js"></script>
   <script src="scripts/views/coin-detail-view.js"></script>
   <script src="scripts/views/coin-filter-view.js"></script>
+  <script src="scripts/bootstrap-tour.js"></script>
   <script src="scripts/controllers/routes.js"></script>
 
 </body>
