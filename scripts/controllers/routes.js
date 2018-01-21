@@ -1,6 +1,6 @@
 if(window.location.pathname !== '/') {
     page.base('/Client')
-    console.log('We got you-2')
+    console.log('We got you-5')
 }
 
 page('/*', (ctx,next) => {
@@ -15,7 +15,7 @@ page('/*', (ctx,next) => {
     next()
 })
 
-page('Client/', () => {
+page('/', () => {
  $('#coin-name tr:nth-child(n+2)').remove()
  console.log('Take me Home')
     app.Coin.fetchAll().then(coins => {
@@ -24,7 +24,7 @@ page('Client/', () => {
     }).catch(error => console.error(error))
 })
 
-page('Client/coin/:id',(ctx) => {
+page('/coin/:id',(ctx) => {
     $('coin-detail-page tr:nth-child(n+2)').remove()
     console.log(ctx.params.id)
     app.Coin.fetchOne(ctx.params.id).then(coin => {
@@ -33,7 +33,7 @@ page('Client/coin/:id',(ctx) => {
     })
 })
 
-page('Client/news', () => {
+page('/news', () => {
     $('#news-list').empty();
     app.News.fetchAll().then(news => {
        console.log(news)
