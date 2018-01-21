@@ -1,3 +1,8 @@
+if(window.location.pathname !== '/') {
+    page.base('/Client')
+    console.log('We got you')
+}
+
 page('/*', (ctx,next) => {
     console.log('I made it')
     if(localStorage.getItem('token')){
