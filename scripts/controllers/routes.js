@@ -10,7 +10,7 @@ page('/*', (ctx,next) => {
     next()
 })
 
-page('/', () => {
+page('Client/', () => {
  $('#coin-name tr:nth-child(n+2)').remove()
     app.Coin.fetchAll().then(coins => {
        console.log(coins)
@@ -18,7 +18,7 @@ page('/', () => {
     })
 })
 
-page('/coin/:id',(ctx) => {
+page('Client/coin/:id',(ctx) => {
     $('coin-detail-page tr:nth-child(n+2)').remove()
     console.log(ctx.params.id)
     app.Coin.fetchOne(ctx.params.id).then(coin => {
@@ -27,7 +27,7 @@ page('/coin/:id',(ctx) => {
     })
 })
 
-page('/news', () => {
+page('Client/news', () => {
     $('#news-list').empty();
     app.News.fetchAll().then(news => {
        console.log(news)
