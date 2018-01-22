@@ -10,24 +10,27 @@ page('/*', (ctx,next) => {
     next()
 })
 
-page('Client/', () => {
+page('/', () => {
  $('#coin-name tr:nth-child(n+2)').remove()
     app.Coin.fetchAll().then(coins => {
-       console.log(coins)
+     
         app.coinsListView.init(coins);
     })
 })
 
-page('Client/coin/:id',(ctx) => {
-    $('coin-detail-page tr:nth-child(n+2)').remove()
+page('/coin/:id',(ctx) => {
+    $('coin-detail-page').remove()
     console.log(ctx.params.id)
     app.Coin.fetchOne(ctx.params.id).then(coin => {
-        console.log('this is from route', coin);
+        console.log('this is from inside single coin', coin);
+        app.Coin.fetchHistory(ctx.params.id).then(graphData =>{
+            console.log('graph data!!',graphData);
+        })
         app.coinDetailView.init(coin);
     })
 })
 
-page('Client/news', () => {
+page('/news', () => {
     $('#news-list').empty();
     app.News.fetchAll().then(news => {
        console.log(news)
