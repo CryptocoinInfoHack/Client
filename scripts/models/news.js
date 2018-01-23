@@ -1,15 +1,14 @@
-// var app = app || {};
+var app = app || {};
 
-// (module => {
-//     const __NEWS_API__ = 'https://newsapi.org/v2/everything';
-//     const TOKEN = '';
+(module => {
+    const __NEWS_API__ = 'https://fierce-bayou-90322.herokuapp.com/news';
+    const TOKEN = '';
 
-//     function News () {
+    function News () {
 
-//     } 
+    } 
 
-//     News.fetchAll = () => $.getJSON(__NEWS_API__ + '?sources=crypto-coins-news&apikey=' + TOKEN);
-//     News.fetchOne = (id) => $.getJSON(__COINCAPAPI__ + 'page/' + id);
+    News.fetchAll = () => $.getJSON(__NEWS_API__);
 
-//     module.News = News;
-// })(app)
+    module.News = News;
+})(app)
