@@ -10,7 +10,7 @@ var app = app || {};
   let template = Handlebars.compile(source)
 
   coins.forEach(coin => {
-      $('#coin-name').append(template(coin));
+      $('#coin-name tbody').append(template(coin));
   })
   $('#coin-list').on('click', 'tr', event => {
       let coinId = $(event.target).data('id');
@@ -34,6 +34,8 @@ var app = app || {};
      let select = $('#filter').find(":selected").attr('value');
     // let selectedId = $(event.target).attr();
     console.log('inside filter', `#${select}`);
+    $('#coin-name td:nth-child(n+2), #coin-name th:nth-child(n+2)').addClass('filter');
+    $('.filter').show();
     $(`td[data-id="${select}"], th[data-id="${select}"]`).toggleClass('filter');
     $('.filter').hide();
  })
