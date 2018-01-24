@@ -18,7 +18,7 @@ var app = app || {};
             data: {
               labels: [ 1, 2, 3, 4, 5, 6, 7],
               datasets: [{ 
-                  data: [86,114,106,106,107,111,133],
+                  data: [{x:2,y:100},{x:2,y:210},{x:3,y:250},{x:3,y:299},{x:4,y:345},{x:5,y:346},{x:6,y:400}],
                   label: "somenumbers",
                   borderColor: "#3e95cd",
                   fill: false
