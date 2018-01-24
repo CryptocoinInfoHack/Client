@@ -7,12 +7,13 @@
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="assets/bootstrap-tour-master/build/css/bootstrap-tour-standalone.min.css" rel="stylesheet">
 
     <base href="."/>
 
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="modules.css">
+    <link rel="stylesheet" href="assets/styles/styles.css">
+    <link rel="stylesheet" href="assets/styles/modules.css">
 
     <title>Document</title>
     <script id="coin-template" type="text/x-handlebars-template" >
@@ -47,14 +48,21 @@
     </script>
 
     <script id="news-template" type="text/x-handlebars-template" >
-      <li>
-        <div class="article-image"><img src="{{urlToImage}}"></div>
-        <a href="{{url}}">{{title}}</a>
+      <li class="row">
+        <div class="article-image col-sm-3"><img class="img-responsive" src="{{urlToImage}}"></div>
+        <div class="col-sm-9">
+          <a class="title" href="{{url}}">{{title}}</a>
+          <div class="meta">
+            <span class="author"><i class="fa fa-user"></i> {{author}}</span> <span class="date"><i class="fa fa-calendar"></i> {{publishedAt}}</span>
+          </div>
+          <p class="description">{{description}}</p>
+        </div>
       </li>
     </script>
 
 </head>
 <body>
+  <div class="container">
     <div>
       <form id="intro">
         <label name="alert" type="text" value="Hello">Have you been here before?</label><br>
@@ -68,10 +76,10 @@
     <li><a href="./">Home</a></li>
     <li><a href="About Us">About US</a></li>
   </ul>
-  <input type="text" id="searchInput" onkeyup="searchCoin()" placeholder="Search for coin names.." title="Type in a name">
   </header>
 
   <section id="coin-list" class="page">
+    <input type="text" id="searchInput" onkeyup="searchCoin()" placeholder="Search for coin names.." title="Type in a name">
     <div id="filter">
       <select>
         <option>Name</option>
@@ -132,5 +140,6 @@
   <script src="scripts/search.js"></script>
   <script src="scripts/controllers/routes.js"></script>
 
+  </div>
 </body>
 </html>
