@@ -1,77 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="assets/bootstrap-tour-master/build/css/bootstrap-tour-standalone.min.css" rel="stylesheet">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="assets/bootstrap-tour-master/build/css/bootstrap-tour-standalone.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/modules.css">
+  <link href='https://fonts.googleapis.com/css?family=Lobster|Raleway:400,200' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
+  <base href="." />
 
-    <base href="."/>
+  <title>CryptoInfoHack</title>
 
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="modules.css">
+  <script id="coin-template" type="text/x-handlebars-template">
+    <tr data-id="{{short}}">
+      <td data-id="{{short}}">{{long}} </td>
+      <td data-id="mktcap" class="filter">${{mktcap}}</td>
+      <td data-id="price" class="filter">${{price}}</td>
+      <td data-id="vwapData" class="filter">${{vwapData}}</td>
+      <td data-id="supply" class="filter">{{supply}}</td>
+      <td data-id="volume" class="filter">${{volume}}</td>
+      <td data-id="cap24hrChange" class="filter">%{{cap24hrChange}}</td>
+    </tr>
+  </script>
 
-    <title>Document</title>
-    <script id="coin-template" type="text/x-handlebars-template" >
-      <tr data-id="{{short}}">
-          <td data-id="{{short}}">{{long}} </td>
-          <td data-id="mktcap" class="filter">${{mktcap}}</td>
-          <td data-id="price"class="filter">${{price}}</td>
-          <td data-id="vwapData"class="filter">${{vwapData}}</td>
-          <td data-id="supply"class="filter">{{supply}}</td>
-          <td data-id="volume"class="filter">${{volume}}</td>
-          <td data-id="cap24hrChange" class="filter">%{{cap24hrChange}}</td>
-        </tr>
-    </script>
+  <script id="trades-template" type="text/x-handlebars-template">
+    <tr data-id="{{short}}">
+      <td data-id="{{coin}}">{{coin}}</td>
+    </tr>
+  </script>
 
-    <script id="trades-template" type="text/x-handlebars-template" >
-      <tr data-id="{{short}}">
-          <td data-id="{{coin}}">{{coin}}</td>
-      </tr>
-    </script>
+  <script id="coin-detail-template" type="text/x-handlebars-template">
+    <tr data-id="{{short}}">
+      <td data-id="{{short}}">{{long}} </td>
+      <td>{{long}} </td>
+      <td>${{mktcap}}</td>
+      <td>${{price}}</td>
+      <td>${{vwapData}}</td>
+      <td>{{supply}}</td>
+      <td>${{volume}}</td>
+      <td>%{{cap24hrChange}}</td>
+    </tr>
+  </script>
 
-    <script id="coin-detail-template" type="text/x-handlebars-template" >
-      <tr data-id="{{short}}">
-          <td data-id="{{short}}">{{long}} </td>
-          <td>{{long}} </td>
-          <td>${{mktcap}}</td>
-          <td>${{price}}</td>
-          <td>${{vwapData}}</td>
-          <td>{{supply}}</td>
-          <td>${{volume}}</td>
-          <td>%{{cap24hrChange}}</td>
-        </tr>
-    </script>
-
-    <script id="news-template" type="text/x-handlebars-template" >
-      <li>
-        <div class="article-image"><img src="{{urlToImage}}"></div>
-        <a href="{{url}}">{{title}}</a>
-      </li>
-    </script>
+  <script id="news-template" type="text/x-handlebars-template">
+    <li>
+      <div class="article-image"><img src="{{urlToImage}}"></div>
+      <a href="{{url}}">{{title}}</a>
+    </li>
+  </script>
 
 </head>
+
 <body>
-    <div>
+
+  <!-- <header class="cf">
+    <h1 class="logo small">CryptoInfoHack</h1>
+    <nav class="cf">
+      <ul id="navbar" class="cf">
+        <li><a href="./news">News</a></li>
+        <li><a href="./">Home</a></li>
+        <li><a href="About Us">About US</a></li>
+      </ul>
+    </nav>
+  </header> -->
+
+<!-- <div class="superZero">
+</div> -->
+  <!-- <div>
       <form id="intro">
         <label name="alert" type="text" value="Hello">Have you been here before?</label><br>
         <button id="yes">Yes</button><button id="no">No</button>
       </form>
-      </div>
-  <header class="cf">
-    <h1>CyrtoInfoHack</h1>
-  <ul id="navbar">
-    <li><a href="./news">News</a></li>
-    <li><a href="./">Home</a></li>
-    <li><a href="About Us">About US</a></li>
-  </ul>
-  <input type="text" id="searchInput" onkeyup="searchCoin()" placeholder="Search for coin names.." title="Type in a name">
-  </header>
+      </div> -->
+  <section class=" cf page section zero">
 
-  <section id="coin-list" class="page">
+  </section>
+  
+  <section id="coin-list" class="page cf section one">
     <div id="filter">
       <select>
         <option>Name</option>
@@ -83,38 +94,40 @@
         <option value="cap24hrChange">% 24 hr</option>
       </select>
     </div>
-    <table id="coin-name">
-      <tbody>
-        <tr id="coin-header">
-          <th>Name</th>
-          <th data-id="mktcap" class="filter">Market Cap</th>
-          <th data-id="price"class="filter">Price</th>
-          <th data-id="vwapData"class="filter">24 hrs VWAP</th>
-          <th data-id="supply"class="filter">Available Supply</th>
-          <th data-id="volume"class="filter">24 hr. Volume</th>
-          <th data-id="cap24hrChange" class="filter">% 24 hr</th>
+    <div>
+        <input type="text" id="searchInput" onkeyup="searchCoin()" placeholder="Search for coin names.." title="Type in a name">
+      </div>
+    <div>
+      <table id="coin-name">
+        <tbody>
+          <tr id="coin-header">
+            <th>Name</th>
+            <th data-id="mktcap" class="filter">Market Cap</th>
+            <th data-id="price" class="filter">Price</th>
+            <th data-id="vwapData" class="filter">24 hrs VWAP</th>
+            <th data-id="supply" class="filter">Available Supply</th>
+            <th data-id="volume" class="filter">24 hr. Volume</th>
+            <th data-id="cap24hrChange" class="filter">% 24 hr</th>
           </tr>
-
-
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+    </div>
   </section>
-  <section id="about-us-page" class="page"></section>
+  <section id="about-us-page" class="page cf section two"><h1>Hello</h1></section>
 
-  <section id="coin-detail-page" class="page"></section>
-  <section id="howto-page" class="page"></section>
-  <section id="news-page" class="page">
+  <section id="coin-detail-page" class="page cf section three"></section>
+  
+  <section id="coin-detail-page" class="page cf section four"></section>
+
+  <section id="howto-page" class="page cf section five"></section>
+
+  <section id="news-page" class="page cf section six">
     <ul id="news-list"></ul>
   </section>
-  <section id="trades-page" class="page"></section>
+  <section id="trades-page" class="page cf section seven"></section>
 
-  <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script
-  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
   <!-- <script src="server.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -131,6 +144,7 @@
   <script src="scripts/bootstrap-tour.js"></script>
   <script src="scripts/search.js"></script>
   <script src="scripts/controllers/routes.js"></script>
+
 
 </body>
 </html>
