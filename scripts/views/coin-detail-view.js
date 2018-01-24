@@ -18,10 +18,10 @@ var app = app || {};
     }
     coinDetailView.history = (history) => {
 
-      let newHistory = history.market_cap.map(arr => {
+      let labels = history.market_cap.map(arr => {
         return app.Coin.getCurrentTimeFromStamp(arr[0]);
       })
-      
+      console.log(labels);
       history.market_cap.unshift(['x', 'y']);
       console.log('unshift try: ', history.market_cap);
       let keys = history.market_cap.shift();
@@ -39,7 +39,7 @@ var app = app || {};
       new Chart(document.getElementById("coin-detail-page-chart"), {
         type: 'line',
         data: {
-          labels: [ 1, 2, 3, 4, 5, 6, 7],
+          labels: labels,
           datasets: [{ 
               data: objects,
               label: "somenumbers",
