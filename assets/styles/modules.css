@@ -21,3 +21,25 @@
     padding: 15px;
     border-radius: 5px;
 }
+
+#news-list .row .title {
+    margin: 0 0 20px 0;
+    font-size: 24px;
+    line-height: normal;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #4c5265;
+    display: block;
+}
+
+#news-list .row .meta {
+    margin-bottom: 10px;
+    color: #8c8c8c;
+}
+
+#news-list .row .description {
+    font-size: 18px;
+    color: #4c4c4c;
+}
+

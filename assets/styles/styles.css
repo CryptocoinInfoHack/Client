@@ -1,0 +1,14 @@
+td {
+    border: solid red;
+}
+
+#news-list {
+    list-style: none;
+}
+
+#news-list .row {
+    list-style:  none;
+    margin-bottom: 30px;
+}
+
+

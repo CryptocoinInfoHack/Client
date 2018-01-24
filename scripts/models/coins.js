@@ -1,9 +1,8 @@
 var app = app || {};
 
 (module => {
-    const __COINCAPAPI__ = 'http://coincap.io/';
-  
-    //FIX THE FUNCTION THAT FEEDS THE DATA........
+    const __COINCAPAPI__ = 'https://coincap.io/';
+
     function Coin() {};
 
     Coin.getCurrentTimeFromStamp = (timestamp) => {
