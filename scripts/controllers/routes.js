@@ -23,10 +23,12 @@ page('/coin/:id',(ctx) => {
     console.log(ctx.params.id)
     app.Coin.fetchOne(ctx.params.id).then(coin => {
         console.log('this is from inside single coin', coin);
-        app.Coin.fetchHistory(ctx.params.id).then(graphData =>{
-            console.log('graph data!!',graphData);
-        })
-        app.coinDetailView.init(coin);
+        
+        app.coinDetailView.init(coin, history);
+    })
+    app.Coin.fetchHistory(ctx.params.id).then(graphData =>{
+        console.log('graph data from route!!',graphData);
+        app.coinDetailView.history(graphData);
     })
 })
 
