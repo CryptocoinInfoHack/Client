@@ -26,7 +26,7 @@ page('/', () => {
 
 page('/coin/:id',(ctx) => {
 
-    $('coin-detail-page tr:nth-child(n+2)').remove()
+    $('#coin-detail-page').empty();
     console.log(ctx.params.id)
 
     app.Coin.fetchOne(ctx.params.id).then(coin => {
