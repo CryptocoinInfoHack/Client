@@ -41,7 +41,7 @@ var app = app || {};
  module.coinsListView = coinsListView;
 
  $(document).on("scroll", function () {
-	if ($(document).scrollTop() > 5) {
+	if ($(document).scrollTop() > 50) {
 		$("header").addClass("small");
     $("#small").addId("small");
 	} else {
