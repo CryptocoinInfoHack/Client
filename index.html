@@ -27,12 +27,12 @@
     <script id="coin-template" type="text/x-handlebars-template" >
       <tr data-id="{{short}}">
           <td data-id="{{short}}">{{long}} </td>
-          <td data-id="mktcap" class="filter mobile">${{mktcap}}</td>
-          <td data-id="price"class="filter mobile">${{price}}</td>
-          <td data-id="vwapData"class="filter mobile">${{vwapData}}</td>
-          <td data-id="supply"class="filter mobile">{{supply}}</td>
-          <td data-id="volume"class="filter mobile">${{volume}}</td>
-          <td data-id="cap24hrChange" class="filter mobile">%{{cap24hrChange}}</td>
+          <td data-id="mktcap" class="filter">${{mktcap}}</td>
+          <td data-id="price"class="filter">${{price}}</td>
+          <td data-id="vwapData"class="filter">${{vwapData}}</td>
+          <td data-id="supply"class="filter">{{supply}}</td>
+          <td data-id="volume"class="filter">${{volume}}</td>
+          <td data-id="cap24hrChange" class="filter">%{{cap24hrChange}}</td>
         </tr>
     </script>
 
@@ -96,7 +96,7 @@
       <header>
         <h1 class="logo">CryptoInfoHack</h1>
         <nav class="nav">
-          <a href="./About_Us">About Us</a>
+          <a href="./About Us">About Us</a>
           <a href="./news">News</a>
           <a href="./">Home</a>
         </nav> </header>
@@ -110,47 +110,8 @@
           </form>
     </div> 
     
+      
 
-      <section class="section wrapper one">
-        <img src="https://www.fortunebuilders.com/wp-content/uploads/2015/07/real-estate-benefits.jpg" class="img-responsive stats" /></section>
-
-  <section id="about-us-page" class="page">
-  <section class="section one">
-      <h1 class="title">Who We Are</h1>
-      <div class="column1">
-          <!-- Place your name here: -->
-          <h1>YOU!</h1>
-          <div class="headshot"></div>
-        </div>
-        
-        <div class="column2">
-          <div class="bio">
-          <!-- Write your own description of yourself here: -->
-          <p>Hello</p>
-          </div>
-        
-          <h2>Creative Computer Programming Porfolio</h2>
-        
-          <ul class="portfolio">
-          <!-- And replace these links and titles with your own stuff, as you begin to program this week! -->
-            <li><a target="_blank" href="https://s3.amazonaws.com/dgmde15/duffles.github.io/phys-pomes.JPG">you'll fill in these links as you go with the class</a></li>
-            <li><a target="_blank" href="http://scratch.mit.edu/projects/105854541/">you might start by linking to the scratch project you made this morning</a></li>
-            <li><a target="_blank" href="https://codepen.io/duffles/pen/RrBGJE">and later you might include other things you build this week</a></li>
-          </ul>
-        </div>
-
-
-        </section>
-  <section class="section ix three img-thumbnail">
-    <div>
-        <img src="/images/ix.png" class="img-responsive ixPic" />
-    <p>I'm just a narcissist masquerading as a sensitive introvert.</p>
-    </div>
-  </section>
-  <section class="section raph four"></section>
-  <section class="section ronn five"></section>
-  <section class="section mike six"></section>
-  </section>
   <section id="coin-list" class="page two">  
       <section class="section one">
           <img src="https://www.fortunebuilders.com/wp-content/uploads/2015/07/real-estate-benefits.jpg" class="img-responsive" />
@@ -173,12 +134,12 @@
         <tbody class="">
           <tr id="coin-header">
             <th>Name</th>
-            <th data-id="mktcap" class="filter mobile">Market Cap</th>
-            <th data-id="price" class="filter mobile">Price</th>
-            <th data-id="vwapData" class="filter mobile">24 hrs VWAP</th>
-            <th data-id="supply" class="filter mobile">Available Supply</th>
-            <th data-id="volume" class="filter mobile">24 hr. Volume</th>
-            <th data-id="cap24hrChange" class="filter mobile">% 24 hr</th>
+            <th data-id="mktcap" class="filter">Market Cap</th>
+            <th data-id="price" class="filter">Price</th>
+            <th data-id="vwapData" class="filter">24 hrs VWAP</th>
+            <th data-id="supply" class="filter">Available Supply</th>
+            <th data-id="volume" class="filter">24 hr. Volume</th>
+            <th data-id="cap24hrChange" class="filter">% 24 hr</th>
           </tr>
 
         </tbody>
@@ -232,8 +193,6 @@
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.slim.js"></script>
   <script src="scripts/views/how-to-view.js"></script>
-  <script src="scripts/views/about-us-view.js"></script>
-
   <script src="scripts/models/coins.js"></script>
   <script src="scripts/models/news.js"></script>
   <script src="scripts/views/news-view.js"></script>
