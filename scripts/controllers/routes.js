@@ -19,7 +19,7 @@ page('/', () => {
  $('#coin-name tr:nth-child(n+2)').remove()
  console.log('Take me Home')
     app.Coin.fetchAll().then(coins => {
-       console.log(coins)
+     
         app.coinsListView.init(coins);
     }).catch(error => console.error(error))
 })
@@ -30,8 +30,13 @@ page('/coin/:id',(ctx) => {
     console.log(ctx.params.id)
 
     app.Coin.fetchOne(ctx.params.id).then(coin => {
-        console.log('this is from route', coin);
-        app.coinDetailView.init(coin);
+        console.log('this is from inside single coin', coin);
+        
+        app.coinDetailView.init(coin, history);
+    })
+    app.Coin.fetchHistory(ctx.params.id).then(graphData =>{
+        console.log('graph data from route!!',graphData);
+        app.coinDetailView.history(graphData);
     })
 })
 
