@@ -1,6 +1,6 @@
 .ui-dialog {
     position: absolute;
-    z-index: 2;
+    z-index: 6;
     top: 100.125px;
     left: 0;
     width: 100%;
