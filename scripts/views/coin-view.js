@@ -41,4 +41,18 @@ var app = app || {};
  })
 
  module.coinsListView = coinsListView;
+
+ $(document).on("scroll", function () {
+	if ($(document).scrollTop() > 5) {
+		$("header").addClass("small");
+    $(".nav").addClass("small2");
+    // $("header").removeClass("section")
+	} else {
+		$("header").removeClass("small");
+     $(".nav").removeClass("small2");
+    // $("header").addClass("section");
+	}
+});
 })(app)
+
+// HEADER FUNCTIONALITY

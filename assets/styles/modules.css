@@ -43,3 +43,162 @@
     color: #4c4c4c;
 }
 
+/* Base Styles */
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 1em;
+	line-height: 1.4em;
+	color: #222;
+	font-family: 'Raleway', sans-serif;
+}
+/* Header Styles */
+@media only screen and (max-width: 2000px) {
+  
+header {
+	width: 100%;
+	height: 16%;
+	background: #F0F8FF;
+	position: fixed;
+	z-index: 2;
+	box-shadow: 0 4px 4px,0,gba(0,0,0,0.1);
+}
+
+
+header{
+	/* -webkit-transition: all 1s;
+          transition: all 1s; */
+}
+  
+  .logo{
+    -webkit-transition: all 1s;
+          transition: all 1s;
+  }
+
+.logo {
+	font-family: 'Lobster', cursive;
+  color: rgba(243,167,18,.9);
+	font-size: 5.5em;
+	font-weight: 500;
+	margin-top: 110px;
+  padding-left: 10px;
+  text-shadow: 1.7px 1.7px #ff0000;
+
+}
+
+.small .logo {
+	font-size: 2.6em;
+	margin-top: .4%;
+  color: rgb(243,167,18);
+          -webkit-transition: all s;
+          transition: all 1s;    
+}
+
+.small2 {
+  padding-top: 65px;
+  font-size: .8em;
+}
+
+.small {
+  height: 50px;
+  font-size: 1.6em;
+  color: rgb(243,167,18);
+          -webkit-transition: all 1s;
+          transition: all 1s;
+}
+
+
+nav>a {
+  font-size: 2.5em;
+  text-decoration: none;
+  color: rgba(243,167,18,1);
+  font-weight: bold;
+  font-family: 'Architects Daughter', cursive;
+  list-style: none;
+  padding-right: .5em;
+}
+
+  nav {
+  text-align: right;
+  margin-top: -98px;
+        /* -webkit-transition: all 1s;
+          transition: all 1s; */
+}
+nav a:hover{
+  font-size: 3em;
+  text-decoration: none;
+  color: rgba(255, 165, 0, 0.9);
+  padding-right: 10px;
+  font-weight: bold;
+  text-shadow: 1.7px 1.7px #ff0000;
+}
+
+
+/* Section Styles */
+
+.section {
+	max-width: 100%; 
+	height: 42em;
+	padding: 10px;
+}
+
+.zero {
+  height: 11%;
+}
+
+.one,.img-responsive{
+  width: 100%;
+  opacity: .8;
+  background: #534D41;
+  
+}
+
+.one{
+  height: 50%;
+}
+
+.two{
+    background-color: rgba(83, 77, 65,.6)
+    ;
+    padding-bottom:20%;
+}
+
+#coin-list>div{
+    padding-top: 3%;    
+}
+
+
+#coin-name{
+    width: 95%;
+    margin: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+  tbody{
+    background-color: white;
+    /* width: 250px; */
+    box-shadow: 3px 8px 16px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+  }
+
+tr:hover{
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+footer{
+max-width: 105%; 
+height: 2em;
+padding: 10px;
+background: #534D41;
+border: solid rgb(243,167,18);
+
+}
+}
+@media only screen and (max-width: 768) {
+  
+  
+  
+}
