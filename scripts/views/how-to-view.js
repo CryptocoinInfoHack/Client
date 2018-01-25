@@ -32,3 +32,4 @@ if (!localStorage.getItem('beenHere')){
  })
  
  $('.page').hide()
+ 
