@@ -47,4 +47,10 @@ page('/news', () => {
         app.newsView.init(news);
     })
 })
+
+page('/About_Us', () => {
+    console.log('Made it Mike')
+    app.aboutUsView.init();
+
+})
 page.start()
