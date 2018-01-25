@@ -8,6 +8,9 @@
   background: rgba(0,0,0,0.6);
   top: 0;     
 }
+p{
+  font-size: 2em;
+}
 
 .ui-dialog #intro {
   width: auto;
@@ -95,7 +98,10 @@ header, .logo {
 }
 
 /* Section Styles */
-
+.title{
+  font-family: 'Lobster', cursive;
+  padding-top: 30%;
+}
 .section {
 max-width: 100%; 
 height: 35em;
@@ -130,6 +136,9 @@ padding: 2.5em 0;
 
 .three{
 background: #8B4789;
+}
+.ixPic{
+image-orientation: 10deg;
 }
 
 .four{
