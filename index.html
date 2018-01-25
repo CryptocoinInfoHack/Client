@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="assets/bootstrap-tour-master/build/css/bootstrap-tour-standalone.min.css" rel="stylesheet">
 
+    <!-- Google Fonts -->
+
+    <link href='https://fonts.googleapis.com/css?family=Lobster|Raleway:400,200' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
+
     <base href="."/>
 
     <link rel="stylesheet" href="assets/styles/styles.css">
@@ -63,24 +68,34 @@
 </head>
 
 <body>
-  <div class="container">
-    <div>
+    <!-- <div>
       <form id="intro">
         <label name="alert" type="text" value="Hello">Have you been here before?</label><br>
         <button id="yes">Yes</button><button id="no">No</button>
       </form>
-      </div>
-  <header class="cf">
-    <h1>CyrtoInfoHack</h1>
-  <ul id="navbar">
-    <li><a href="./news">News</a></li>
-    <li><a href="./">Home</a></li>
-    <li><a href="About Us">About US</a></li>
-  </ul>
-  </header>
+      </div> -->
+      <header>
+        <h1 class="logo">CryptoInfoHack</h1>
+        <nav class="nav">
+          <a href="./About Us">About Us</a>
+          <a href="./news">News</a>
+          <a href="./">Home</a>
+        </nav> </header>
+      <section class="zero"></section>
+      <!-- <div class="superZero">
+    </div> -->
+      <!-- <div>
+          <form id="intro">
+            <label name="alert" type="text" value="Hello">Have you been here before?</label><br>
+            <button id="yes">Yes</button><button id="no">No</button>
+          </form>
+    </div> -->
+    
+      <section class="section one">
+        <img src="https://www.fortunebuilders.com/wp-content/uploads/2015/07/real-estate-benefits.jpg" class="img-responsive" />
+      </section>
 
-  <section id="coin-list" class="page">
-    <input type="text" id="searchInput" onkeyup="searchCoin()" placeholder="Search for coin names.." title="Type in a name">
+  <section id="coin-list" class="page two">  
     <div id="filter">
       <select>
         <option>Name</option>
@@ -91,13 +106,12 @@
         <option value="volume">24 hr. Volume</option>
         <option value="cap24hrChange">% 24 hr</option>
       </select>
+  
+      <input type="text" id="searchInput" onkeyup="searchCoin()" placeholder="Search for coin names.." title="Type in a name">
     </div>
     <div>
-        <input type="text" id="searchInput" onkeyup="searchCoin()" placeholder="Search for coin names.." title="Type in a name">
-      </div>
-    <div>
-      <table id="coin-name" class="table table-stripped table-bordered">
-        <tbody>
+      <table id="coin-name" class="table table-stripped">
+        <tbody class="">
           <tr id="coin-header">
             <th>Name</th>
             <th data-id="mktcap" class="filter">Market Cap</th>
@@ -111,24 +125,14 @@
       </table>
     </div>
   </section>
-  <section id="about-us-page" class="page cf section two"><h1>Hello</h1>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras gravida malesuada nisi eget efficitur. In hac habitasse platea dictumst. Nunc gravida id tellus eget accumsan. Donec consequat ultrices eleifend. Aenean sollicitudin porttitor erat, sit amet posuere est faucibus sit amet. Nullam vitae massa vitae massa rhoncus viverra non eu lacus. Vivamus faucibus turpis massa, non accumsan justo elementum quis. Etiam augue lectus, dignissim vel blandit a, efficitur vel elit. Mauris rhoncus enim nulla, eget posuere nibh tempor vitae. Mauris condimentum libero odio, et iaculis urna finibus ac. Nulla molestie suscipit tellus, id dictum purus lacinia viverra. Praesent tellus justo, convallis ut felis nec, sagittis tempor est. Nulla at erat porttitor neque porta laoreet id vitae erat. Donec iaculis, mauris quis rhoncus mattis, nibh justo gravida lacus, a maximus metus risus in augue.
-
-    Integer aliquam sit amet leo a condimentum. Etiam porttitor euismod erat. Nam iaculis, nulla ut varius tristique, libero urna tincidunt nisi, eget venenatis enim massa vitae libero. Pellentesque scelerisque elit vestibulum nibh tempus, vitae malesuada neque feugiat. Donec ullamcorper elit vitae iaculis placerat. Quisque nec enim orci. Donec tincidunt dolor in porta finibus. Nulla facilisi. Vivamus quis facilisis ligula. Nulla sed bibendum enim.
-    
-    Vestibulum volutpat elementum tellus. Aenean ullamcorper molestie libero id aliquam. Donec mattis nibh id consectetur vestibulum. Mauris risus elit, egestas ut congue vitae, dapibus ut nibh. Sed metus mauris, volutpat sed gravida et, convallis ac sapien. Ut id orci vel risus ullamcorper dapibus. Pellentesque suscipit orci ex, nec congue mi varius non. Donec convallis mollis ante, et dictum nulla mattis eget. In hac habitasse platea dictumst.
-    
-    Nunc in neque ac odio ultricies fringilla. Aenean porttitor ultrices quam eu tempus. Cras ut odio sit amet ipsum commodo lobortis eu ultricies ante. Fusce at tortor tortor. Vivamus blandit sem nulla, ac porttitor turpis congue nec. Aenean ligula nisl, dignissim quis aliquet vitae, ornare vehicula turpis. Praesent eget leo et sem convallis finibus vel imperdiet eros. Sed suscipit nisi pharetra felis accumsan egestas.
-  </section>
 
   <section id="coin-detail-page" class="page"></section>
-  <canvas id="coin-detail-page-chart" width="400" height="400"></canvas>
+  
 
   <section id="howto-page" class="page"></section>
   <section id="news-page" class="page">
     <ul id="news-list"></ul>
   </section>
-  <section id="trades-page" class="page cf section seven"></section>
 
 
 
