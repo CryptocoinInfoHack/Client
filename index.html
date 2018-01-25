@@ -34,23 +34,40 @@
         </tr>
     </script>
 
-    <script id="trades-template" type="text/x-handlebars-template" >
+    <script id="trades-template" type="text/x-handlebars-template">
       <tr data-id="{{short}}">
           <td data-id="{{coin}}">{{coin}}</td>
       </tr>
     </script>
 
-    <script id="coin-detail-template" type="text/x-handlebars-template" >
-      <tr data-id="{{short}}">
-          <td data-id="{{short}}">{{long}} </td>
-          <td>{{long}} </td>
-          <td>${{mktcap}}</td>
-          <td>${{price}}</td>
-          <td>${{vwapData}}</td>
-          <td>{{supply}}</td>
-          <td>${{volume}}</td>
-          <td>%{{cap24hrChange}}</td>
-        </tr>
+    <script id="coin-detail-template" type="text/x-handlebars-template">
+      <div class="wrapper">
+        <div class="container">
+          <h1 class="coin-detail-page-title">{{display_name}} Daily Exchange Volume</h1>
+          <div data-id="{{short}}" class="coin-detail-name-wrapper">
+            <div class="rank">
+              <div class="rank-flag">
+                <div>Rank</div>
+                <div class="coin-rank">{{rank}}</div>
+                <div class="rank-triangle"></div>
+              </div>
+            </div>
+              <div class="coin-detail-name">${{price}}({{cap24hrChange}})</div>
+          </div>
+      
+          <div class="coin-detail-values">
+            <div class="row">
+              <div class="col col-sm-4">MARKET CAP: ${{market_cap}}</div>
+              <div class="col col-sm-4">24 HR VOLUME: ${{volume}}</div>
+              <div class="col col-sm-4">AVAILABLE SUPPLY: ${{supply}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="graph-wrapper container">
+        <h2 class="graph-title">{{display_name}} Price History</h2>
+        <canvas id="coin-detail-page-chart" width="400" height="400"></canvas>
+      </div>
     </script>
 
     <script id="news-template" type="text/x-handlebars-template" >
@@ -121,9 +138,11 @@
             <th data-id="volume" class="filter">24 hr. Volume</th>
             <th data-id="cap24hrChange" class="filter">% 24 hr</th>
           </tr>
+
         </tbody>
       </table>
     </div>
+
   </section>
 
   <section id="coin-detail-page" class="page"></section>
@@ -175,6 +194,5 @@
   <script src="scripts/search.js"></script>
   <script src="scripts/controllers/routes.js"></script>
 
-  </div>
 </body>
 </html>
