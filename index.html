@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="assets/bootstrap-tour-master/build/css/bootstrap-tour-standalone.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+
+    <link href='https://fonts.googleapis.com/css?family=Lobster|Raleway:400,200' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
 
     <base href="."/>
 
@@ -76,26 +82,37 @@
         </div>
       </li>
     </script>
-
 </head>
+
 <body>
-    <div>
+    <!-- <div>
       <form id="intro">
         <label name="alert" type="text" value="Hello">Have you been here before?</label><br>
         <button id="yes">Yes</button><button id="no">No</button>
       </form>
-      </div>
-  <header class="cf">
-    <h1>CyrtoInfoHack</h1>
-  <ul id="navbar">
-    <li><a href="./news">News</a></li>
-    <li><a href="./">Home</a></li>
-    <li><a href="About Us">About US</a></li>
-  </ul>
-  </header>
+      </div> -->
+      <header>
+        <h1 class="logo">CryptoInfoHack</h1>
+        <nav class="nav">
+          <a href="./About Us">About Us</a>
+          <a href="./news">News</a>
+          <a href="./">Home</a>
+        </nav> </header>
+      <section class="zero"></section>
+      <!-- <div class="superZero">
+    </div> -->
+      <!-- <div>
+          <form id="intro">
+            <label name="alert" type="text" value="Hello">Have you been here before?</label><br>
+            <button id="yes">Yes</button><button id="no">No</button>
+          </form>
+    </div> -->
+    
+      <section class="section one">
+        <img src="https://www.fortunebuilders.com/wp-content/uploads/2015/07/real-estate-benefits.jpg" class="img-responsive" />
+      </section>
 
-  <section id="coin-list" class="page">
-    <input type="text" id="searchInput" onkeyup="searchCoin()" placeholder="Search for coin names.." title="Type in a name">
+  <section id="coin-list" class="page two">  
     <div id="filter">
       <select>
         <option>Name</option>
@@ -106,22 +123,27 @@
         <option value="volume">24 hr. Volume</option>
         <option value="cap24hrChange">% 24 hr</option>
       </select>
+  
+      <input type="text" id="searchInput" onkeyup="searchCoin()" placeholder="Search for coin names.." title="Type in a name">
     </div>
-    <table id="coin-name">
-      <tbody>
-        <tr id="coin-header">
-          <th>Name</th>
-          <th data-id="mktcap" class="filter">Market Cap</th>
-          <th data-id="price"class="filter">Price</th>
-          <th data-id="vwapData"class="filter">24 hrs VWAP</th>
-          <th data-id="supply"class="filter">Available Supply</th>
-          <th data-id="volume"class="filter">24 hr. Volume</th>
-          <th data-id="cap24hrChange" class="filter">% 24 hr</th>
+    <div>
+      <table id="coin-name" class="table table-stripped">
+        <tbody class="">
+          <tr id="coin-header">
+            <th>Name</th>
+            <th data-id="mktcap" class="filter">Market Cap</th>
+            <th data-id="price" class="filter">Price</th>
+            <th data-id="vwapData" class="filter">24 hrs VWAP</th>
+            <th data-id="supply" class="filter">Available Supply</th>
+            <th data-id="volume" class="filter">24 hr. Volume</th>
+            <th data-id="cap24hrChange" class="filter">% 24 hr</th>
           </tr>
-      </tbody>
-    </table>
+
+        </tbody>
+      </table>
+    </div>
+
   </section>
-  <section id="about-us-page" class="page"></section>
 
   <section id="coin-detail-page" class="page"></section>
   
@@ -130,15 +152,30 @@
   <section id="news-page" class="page">
     <ul id="news-list"></ul>
   </section>
-  <section id="trades-page" class="page"></section>
 
-  <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script
-  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-  crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="seven">
+
+</footer>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
   <!-- <script src="server.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
