@@ -22,7 +22,7 @@ page('/', () => {
 })
 page('/coin/:id',(ctx) => {
 
-    $('#coin-detail-page').remove()
+    $('#coin-detail')
     console.log(ctx.params.id)
     app.Coin.fetchOne(ctx.params.id).then(coin => {
         console.log('this is from inside single coin', coin);
@@ -33,6 +33,7 @@ page('/coin/:id',(ctx) => {
         console.log('graph data from route!!',graphData);
         app.coinDetailView.history(graphData);
     })
+
 })
 page('/news', () => {
     $('#news-list').empty();
@@ -46,6 +47,11 @@ page('/news', () => {
 page('/About_Us', () => {
     console.log('Made it Mike')
     app.aboutUsView.init();
+})
+
+page('/howToPage', () => {
+    console.log('HOW TO')
+    app.howToView.init();
 })
 
 page.start()

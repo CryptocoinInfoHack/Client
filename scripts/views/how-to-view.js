@@ -1,3 +1,18 @@
+
+var app = app || {};
+
+(module => {
+const howToView = {};
+
+howToView.init = () => {
+   $('.page').hide();
+ $('#how-to-page').show();
+}
+
+
+module.howToView = howToView;
+})(app)
+
 if (!localStorage.getItem('beenHere')){
     console.log(localStorage.getItem('beenHere'))
     console.log('been here is not here');
@@ -10,12 +25,14 @@ if (!localStorage.getItem('beenHere')){
  }
 
  $(".ui-dialog-titlebar").hide()
+
     
       
- $('#intro').on('click','button',function(e){
-     e.preventDefault();
-     let answer = $(event.target).attr('id')
+$('#intro').on('click','button',function(e){
+      e.preventDefault();
+      let answer = $(event.target).attr('id')
     
+
      if(answer === 'yes'){localStorage.setItem('beenHere',true)
     $('.ui-dialog').hide();
     } else if(answer === 'no') {
@@ -30,5 +47,6 @@ if (!localStorage.getItem('beenHere')){
         // Target your .container, .wrapper, .post, etc.
     $("#howto-page").fitVids();
  })
+
  
- $('.page').hide()
+//  $('.page').hide()
