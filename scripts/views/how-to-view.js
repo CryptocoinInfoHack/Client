@@ -1,7 +1,9 @@
 if (!localStorage.getItem('beenHere')){
     console.log(localStorage.getItem('beenHere'))
     console.log('been here is not here');
-    $('#intro').dialog();
+    $('#intro').dialog({
+        minWidth: 400
+    });
  }else{
      $('#intro').hide();
      console.log('been here is here')
