@@ -9,7 +9,7 @@ var app = app || {};
       
         let template = Handlebars.compile(source)
       
-        $('#coin-detail-page').append(template(coin));
+        $('#coin-detail-page').empty().append(template(coin));
         
         $('#coin-detail-page').show();    
         
