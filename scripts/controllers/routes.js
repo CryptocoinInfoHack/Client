@@ -2,7 +2,6 @@ if(window.location.pathname !== '/') {
     page.base('/Client')
     console.log('We got you-5')
 }
-
 page('/*', (ctx,next) => {
     console.log('I made it')
     if(localStorage.getItem('token')){
@@ -10,11 +9,9 @@ page('/*', (ctx,next) => {
     } else{
         $('.protected').hide()
     }
-
     $('.page').hide()
     next()
 })
-
 page('/', () => {
  $('#coin-name tr:nth-child(n+2)').remove()
  console.log('Take me Home')
@@ -23,12 +20,10 @@ page('/', () => {
         app.coinsListView.init(coins);
     }).catch(error => console.error(error))
 })
-
 page('/coin/:id',(ctx) => {
 
     $('#coin-detail-page').empty();
     console.log(ctx.params.id)
-
     app.Coin.fetchOne(ctx.params.id).then(coin => {
         console.log('this is from inside single coin', coin);
         
@@ -39,7 +34,6 @@ page('/coin/:id',(ctx) => {
         app.coinDetailView.history(graphData);
     })
 })
-
 page('/news', () => {
     $('#news-list').empty();
     app.News.fetchAll().then(news => {
@@ -47,4 +41,11 @@ page('/news', () => {
         app.newsView.init(news);
     })
 })
+
+
+page('/About_Us', () => {
+    console.log('Made it Mike')
+    app.aboutUsView.init();
+})
+
 page.start()

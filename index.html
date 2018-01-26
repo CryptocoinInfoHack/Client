@@ -1,26 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="assets/bootstrap-tour-master/build/css/bootstrap-tour-standalone.min.css" rel="stylesheet">
-
+    
     <!-- Google Fonts -->
-
     <link href='https://fonts.googleapis.com/css?family=Lobster|Raleway:400,200' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
     <base href="."/>
-
     <link rel="stylesheet" href="assets/styles/styles.css">
     <link rel="stylesheet" href="assets/styles/modules.css">
-
     <title>Document</title>
     <script id="coin-template" type="text/x-handlebars-template" >
       <tr data-id="{{short}}">
@@ -69,7 +64,6 @@
         <canvas id="coin-detail-page-chart" width="400" height="400"></canvas>
       </div>
     </script>
-
     <script id="news-template" type="text/x-handlebars-template" >
       <li class="row">
         <div class="article-image col-sm-3"><img class="img-responsive" src="{{urlToImage}}"></div>
@@ -83,7 +77,6 @@
       </li>
     </script>
 </head>
-
 <body>
     <!-- <div>
       <form id="intro">
@@ -108,11 +101,52 @@
           </form>
     </div> -->
     
+
+    <section id="about-us-page" class="page">
+      <section class="section one">
+          <h1 class="title">Who We Are</h1>
+          <div class="column1">
+              <!-- Place your name here: -->
+              <h1>YOU!</h1>
+              <div class="headshot"></div>
+            </div>
+            
+            <div class="column2">
+              <div class="bio">
+              <!-- Write your own description of yourself here: -->
+              <p>Hello</p>
+              </div>
+            
+              <h2>Creative Computer Programming Porfolio</h2>
+            
+              <ul class="portfolio">
+              <!-- And replace these links and titles with your own stuff, as you begin to program this week! -->
+                <li><a target="_blank" href="https://s3.amazonaws.com/dgmde15/duffles.github.io/phys-pomes.JPG">you'll fill in these links as you go with the class</a></li>
+                <li><a target="_blank" href="http://scratch.mit.edu/projects/105854541/">you might start by linking to the scratch project you made this morning</a></li>
+                <li><a target="_blank" href="https://codepen.io/duffles/pen/RrBGJE">and later you might include other things you build this week</a></li>
+              </ul>
+            </div>
+    
+            </section>
+      <section class="section ix three img-thumbnail">
+        <div>
+            <img src="/images/ix.png" class="img-responsive ixPic" />
+        <p>I'm just a narcissist masquerading as a sensitive introvert.</p>
+        </div>
+      </section>
+      <section class="section raph four"></section>
+      <section class="section ronn five"></section>
+      <section class="section mike six"></section>
+      </section>
+
       <section class="section one">
         <img src="https://www.fortunebuilders.com/wp-content/uploads/2015/07/real-estate-benefits.jpg" class="img-responsive" />
       </section>
 
   <section id="coin-list" class="page two">  
+      <section class="section one">
+          <img src="https://www.fortunebuilders.com/wp-content/uploads/2015/07/real-estate-benefits.jpg" class="img-responsive" />
+        </section>
     <div id="filter">
       <select>
         <option>Name</option>
@@ -144,36 +178,20 @@
     </div>
 
   </section>
-
   <section id="coin-detail-page" class="page"></section>
   
-
   <section id="howto-page" class="page"></section>
   <section id="news-page" class="page">
-    <ul id="news-list"></ul>
+    <div class="news-heading">
+        <!-- <img src="images/andre-francois-518771.jpg" class="img-responsive" /> -->
+        <div class="title-wrapper">
+          <h1 class="page-title animated fadeIn">Latest Crypto Currecnty News</h1>
+        </div>
+    </div>
+    <ul id="news-list" class="container"></ul>
   </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <footer class="seven">
-
 </footer>
-
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
   <!-- <script src="server.js"></script> -->
@@ -185,6 +203,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.slim.js"></script>
   <script src="scripts/views/how-to-view.js"></script>
   <script src="scripts/models/coins.js"></script>
+  <script src="scripts/views/about-us-view.js"></script>
   <script src="scripts/models/news.js"></script>
   <script src="scripts/views/news-view.js"></script>
   <script src="scripts/views/coin-view.js"></script>
