@@ -48,4 +48,9 @@ page('/About_Us', () => {
     app.aboutUsView.init();
 })
 
+page('/howToPage', () => {
+    console.log('HOW TO')
+    app.howToView.init();
+})
+
 page.start()
