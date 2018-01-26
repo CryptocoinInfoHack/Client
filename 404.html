@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="assets/bootstrap-tour-master/build/css/bootstrap-tour-standalone.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Lobster|Raleway:400,200' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+  <base href="." />
+  <link rel="stylesheet" href="assets/styles/styles.css">
+  <link rel="stylesheet" href="assets/styles/modules.css">
+  <title>Document</title>
+  <script id="coin-template" type="text/x-handlebars-template">
+    <tr data-id="{{short}}">
+      <td data-id="{{short}}">{{long}} </td>
+      <td data-id="mktcap" class="filter mobile">${{mktcap}}</td>
+      <td data-id="price" class="filter mobile">${{price}}</td>
+      <td data-id="vwapData" class="filter mobile">${{vwapData}}</td>
+      <td data-id="supply" class="filter mobile">{{supply}}</td>
+      <td data-id="volume" class="filter mobile">${{volume}}</td>
+      <td data-id="cap24hrChange" class="filter mobile">%{{cap24hrChange}}</td>
+    </tr>
+  </script>
+
+  <script id="trades-template" type="text/x-handlebars-template">
+    <tr data-id="{{short}}">
+      <td data-id="{{coin}}">{{coin}}</td>
+    </tr>
+  </script>
+
+  <script id="coin-detail-template" type="text/x-handlebars-template">
+    <div class="wrapper">
+      <div class="container">
+        <h1 class="coin-detail-page-title">{{display_name}} Daily Exchange Volume</h1>
+        <div data-id="{{short}}" class="coin-detail-name-wrapper">
+          <div class="rank">
+            <div class="rank-flag">
+              <div>Rank</div>
+              <div class="coin-rank">{{rank}}</div>
+              <div class="rank-triangle"></div>
+            </div>
+          </div>
+          <div class="coin-detail-name">${{price}}({{cap24hrChange}})</div>
+        </div>
+
+        <div class="coin-detail-values">
+          <div class="row">
+            <div class="col col-sm-4">MARKET CAP: ${{market_cap}}</div>
+            <div class="col col-sm-4">24 HR VOLUME: ${{volume}}</div>
+            <div class="col col-sm-4">AVAILABLE SUPPLY: ${{supply}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="graph-wrapper container">
+      <h2 class="graph-title">{{display_name}} Price History</h2>
+      <canvas id="coin-detail-page-chart" width="400" height="400"></canvas>
+    </div>
+  </script>
+  <script id="news-template" type="text/x-handlebars-template">
+    <li class="row">
+      <div class="article-image col-sm-3">
+        <img class="img-responsive" src="{{urlToImage}}">
+      </div>
+      <div class="col-sm-9">
+        <a class="title" href="{{url}}">{{title}}</a>
+        <div class="meta">
+          <span class="author">
+            <i class="fa fa-user"></i> {{author}}</span>
+          <span class="date">
+            <i class="fa fa-calendar"></i> {{publishedAt}}</span>
+        </div>
+        <p class="description">{{description}}</p>
+      </div>
+    </li>
+  </script>
+</head>
+
+<body>
+  <header>
+
+    <div id="myNav" class="overlay">
+      <!-- Button to close the overlay navigation -->
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <!-- Overlay content -->
+      <div class="overlay-content">
+        <nav class="nav">
+          <ul id="crypto-links">
+            <li><a href="./About_Us">About Us</a></li>
+            <li><a href="./news">News</a></li>
+            <li><a href="./">Home</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div id="crypto-nav clearfix">
+      <h1 class="logo">CryptoInfoHack</h1>
+      <button onclick="openNav()" id="navbar-toggle">
+        <div></div>
+        <div></div>
+        <div></div>
+      </button>
+    </div>
+    
+  </header>
+  <section class="zero"></section>
+  <!-- <div class="superZero">
+    </div> -->
+  <div>
+    <form class="animated fadeIn" id="intro">
+      <label name="alert" type="text" value="Hello">Have you been here before?</label>
+      <br>
+      <button id="yes">Yes</button>
+      <button id="no">No</button>
+    </form>
+  </div>
+
+
+  <section id="about-us-page" class="page">
+    <section class="section one">
+      <h1 class="title">Who We Are</h1>
+      <div class="column1">
+        <!-- Place your name here: -->
+        <h1>YOU!</h1>
+        <div class="headshot"></div>
+      </div>
+
+      <div class="column2">
+        <div class="bio">
+          <!-- Write your own description of yourself here: -->
+          <p>Hello</p>
+        </div>
+
+        <h2>Creative Computer Programming Porfolio</h2>
+
+        <ul class="portfolio">
+          <!-- And replace these links and titles with your own stuff, as you begin to program this week! -->
+          <li>
+            <a target="_blank" href="https://s3.amazonaws.com/dgmde15/duffles.github.io/phys-pomes.JPG">you'll fill in these links as you go with the class</a>
+          </li>
+          <li>
+            <a target="_blank" href="http://scratch.mit.edu/projects/105854541/">you might start by linking to the scratch project you made this morning</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://codepen.io/duffles/pen/RrBGJE">and later you might include other things you build this week</a>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+    <section class="section ix three img-thumbnail">
+      <div>
+        <img src="/images/ix.png" class="img-responsive ixPic" />
+        <p>I'm just a narcissist masquerading as a sensitive introvert.</p>
+      </div>
+    </section>
+    <section class="section raph four"></section>
+    <section class="section ronn five"></section>
+    <section class="section mike six"></section>
+  </section>
+
+  <section id="coin-list" class="page two">
+    <div class="home-heading">
+      <!-- <img src="images/andre-francois-518771.jpg" class="img-responsive" /> -->
+      <div class="title-wrapper">
+        <h1 class="page-title animated fadeIn">Crypto Coin Hack</h1>
+      </div>
+    </div>
+    <div id="filter">
+      <select>
+        <option>Name</option>
+        <option value="mktcap">Market Cap</option>
+        <option value="price">Price</option>
+        <option value="vwapData">24 hrs VWAP</option>
+        <option value="supply">Available Supply</option>
+        <option value="volume">24 hr. Volume</option>
+        <option value="cap24hrChange">% 24 hr</option>
+      </select>
+
+      <input type="text" id="searchInput" onkeyup="searchCoin()" placeholder="Search for coin names.." title="Type in a name">
+    </div>
+    <div>
+      <table id="coin-name" class="table table-stripped">
+        <tbody class="">
+          <tr id="coin-header">
+            <th>Name</th>
+            <th data-id="mktcap" class="filter mobile">Market Cap</th>
+            <th data-id="price" class="filter mobile">Price</th>
+            <th data-id="vwapData" class="filter mobile">24 hrs VWAP</th>
+            <th data-id="supply" class="filter mobile">Available Supply</th>
+            <th data-id="volume" class="filter mobile">24 hr. Volume</th>
+            <th data-id="cap24hrChange" class="filter mobile">% 24 hr</th>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </section>
+  <section id="coin-detail-page" class="page"></section>
+
+  <section id="howto-page" class="page">
+      <div class="howto-heading">
+        <div class="title-wrapper">
+          <h1 class="page-title animated fadeIn">What Is Crypto Currency?</h1>
+        </div>
+      </div>
+      <div class="container">
+        <h2 class="sub-heading">To better understand crypto currency, here are a couple videos to better understand things.</h2> 
+        <div class="row">
+          <div class="col-sm-6"><iframe width="560" height="315" src="https://www.youtube.com/embed/KP_hGPQVLpA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+          <div class="col-sm-6"><iframe width="560" height="315" src="https://www.youtube.com/embed/kubGCSj5y3k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+        </div>
+        <h2 class="sub-heading">How to Buy Cryptocurrency</h2>
+        <p class="content-body">There are many diffrent formats available to buy and sell crypto currency, but here is one way. You can start by making an account on <a href="http://www.coinbase.com"> Coinbase</a>. Coinbase will allow you to buy and trade the better known cryptocurrencies like, Bitcoin, Bitcoin Cash, Ethereum, and Litecoin. You can link a credit/debit card for immediate trading or you can use a direct link to your bank account and wait four to five days. To trade some of the other cryptocurrencies like Ripple, Tron, and Cardano other sites are available like <a href="http://www.binance.com"> Binance</a>.</p>
+      </div>
+  </section>
+
+  <section id="news-page" class="page">
+    <div class="news-heading">
+      <div class="title-wrapper">
+        <h1 class="page-title animated fadeIn">Latest Crypto Currecnty News</h1>
+      </div>
+    </div>
+    <ul id="news-list" class="container"></ul>
+  </section>
+  <footer class="seven">
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+    crossorigin="anonymous"></script>
+  <!-- <script src="server.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.2.0/jquery.fitvids.min.js"></script>
+  <script src="assets/bootstrap-tour-master/build/js/bootstrap-tour-standalone.min.js"></script>
+  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.slim.js"></script>
+  <script src="scripts/nav.js"></script>
+  <script src="scripts/views/how-to-view.js"></script>
+  <script src="scripts/fitvids-code.js"></script>
+  <script src="scripts/models/coins.js"></script>
+  <script src="scripts/views/about-us-view.js"></script>
+  <script src="scripts/models/news.js"></script>
+  <script src="scripts/views/news-view.js"></script>
+  <script src="scripts/views/coin-view.js"></script>
+  <script src="scripts/views/coin-detail-view.js"></script>
+  <script src="scripts/views/coin-filter-view.js"></script>
+  <script src="scripts/bootstrap-tour.js"></script>
+  <script src="scripts/search.js"></script>
+  <script src="scripts/controllers/routes.js"></script>
+
+</body>
+
+</html>
