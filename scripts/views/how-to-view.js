@@ -15,6 +15,7 @@ if (!localStorage.getItem('beenHere')){
      if(answer === 'yes'){localStorage.setItem('beenHere',true)
     $('.ui-dialog').hide();
     } else if(answer === 'no') {
+      localStorage.setItem('beenHere',true)
       alert('Welcome you bad ombre!')
       $('.page').hide()
       $('#intro').hide()
