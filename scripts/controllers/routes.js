@@ -21,6 +21,7 @@ page('/', () => {
     }).catch(error => console.error(error))
 })
 page('/coin/:id',(ctx) => {
+
     $('#coin-detail-page').empty();
     console.log(ctx.params.id)
     app.Coin.fetchOne(ctx.params.id).then(coin => {
@@ -41,8 +42,10 @@ page('/news', () => {
     })
 })
 
+
 page('/About_Us', () => {
     console.log('Made it Mike')
     app.aboutUsView.init();
 })
+
 page.start()

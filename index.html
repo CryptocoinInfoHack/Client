@@ -20,19 +20,21 @@
     <script id="coin-template" type="text/x-handlebars-template" >
       <tr data-id="{{short}}">
           <td data-id="{{short}}">{{long}} </td>
-          <td data-id="mktcap" class="filter mobile">${{mktcap}}</td>
-          <td data-id="price"class="filter mobile">${{price}}</td>
-          <td data-id="vwapData"class="filter mobile">${{vwapData}}</td>
-          <td data-id="supply"class="filter mobile">{{supply}}</td>
-          <td data-id="volume"class="filter mobile">${{volume}}</td>
-          <td data-id="cap24hrChange" class="filter mobile">%{{cap24hrChange}}</td>
+          <td data-id="mktcap" class="filter">${{mktcap}}</td>
+          <td data-id="price"class="filter">${{price}}</td>
+          <td data-id="vwapData"class="filter">${{vwapData}}</td>
+          <td data-id="supply"class="filter">{{supply}}</td>
+          <td data-id="volume"class="filter">${{volume}}</td>
+          <td data-id="cap24hrChange" class="filter">%{{cap24hrChange}}</td>
         </tr>
     </script>
+
     <script id="trades-template" type="text/x-handlebars-template">
       <tr data-id="{{short}}">
           <td data-id="{{coin}}">{{coin}}</td>
       </tr>
     </script>
+
     <script id="coin-detail-template" type="text/x-handlebars-template">
       <div class="wrapper">
         <div class="container">
@@ -85,7 +87,7 @@
       <header>
         <h1 class="logo">CryptoInfoHack</h1>
         <nav class="nav">
-          <a href="./About_Us">About Us</a>
+          <a href="./About Us">About Us</a>
           <a href="./news">News</a>
           <a href="./">Home</a>
         </nav> </header>
@@ -137,8 +139,10 @@
       <section class="section mike six"></section>
       </section>
 
+      <section class="section one">
+        <img src="https://www.fortunebuilders.com/wp-content/uploads/2015/07/real-estate-benefits.jpg" class="img-responsive" />
+      </section>
 
-      
   <section id="coin-list" class="page two">  
       <section class="section one">
           <img src="https://www.fortunebuilders.com/wp-content/uploads/2015/07/real-estate-benefits.jpg" class="img-responsive" />
@@ -161,16 +165,18 @@
         <tbody class="">
           <tr id="coin-header">
             <th>Name</th>
-            <th data-id="mktcap" class="filter mobile">Market Cap</th>
-            <th data-id="price" class="filter mobile">Price</th>
-            <th data-id="vwapData" class="filter mobile">24 hrs VWAP</th>
-            <th data-id="supply" class="filter mobile">Available Supply</th>
-            <th data-id="volume" class="filter mobile">24 hr. Volume</th>
-            <th data-id="cap24hrChange" class="filter mobile">% 24 hr</th>
+            <th data-id="mktcap" class="filter">Market Cap</th>
+            <th data-id="price" class="filter">Price</th>
+            <th data-id="vwapData" class="filter">24 hrs VWAP</th>
+            <th data-id="supply" class="filter">Available Supply</th>
+            <th data-id="volume" class="filter">24 hr. Volume</th>
+            <th data-id="cap24hrChange" class="filter">% 24 hr</th>
           </tr>
+
         </tbody>
       </table>
     </div>
+
   </section>
   <section id="coin-detail-page" class="page"></section>
   
@@ -206,5 +212,6 @@
   <script src="scripts/bootstrap-tour.js"></script>
   <script src="scripts/search.js"></script>
   <script src="scripts/controllers/routes.js"></script>
+
 </body>
 </html>

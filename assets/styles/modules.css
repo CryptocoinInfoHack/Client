@@ -162,6 +162,100 @@ margin-bottom: 40px;
   -webkit-animation-duration: 3s;
   -moz-animation-duration: 3s;
 }
+
+#coin-detail-page .coin-detail-name .coin-detail-id {
+    color: #adadad;
+}
+
+
+#coin-detail-page .coin-detail-values .coin-market-info-th {
+    font-size: 16px;
+}
+
+#coin-detail-page .coin-detail-values .coin-market-info-td {
+    font-size: 16px;
+    border: 0;
+}
+
+#coin-detail-page .coin-detail-values .coin-detail-header-row {
+    border-bottom: 1px solid lightgray;
+    
+}
+
+#coin-detail-page .coin-rank {
+  padding-bottom: 20px;
+  color: white;
+}
+
+#coin-detail-page .coin-detail-page-title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+#coin-detail-page .coin-detail-name-wrapper {
+    text-align: center;
+    color: #2980b9;
+    font-size: 46px;
+}
+
+#coin-detail-page .coin-detail-name-wrapper .coin-detail-name {
+    text-align: center;
+    color: #2980b9;
+    font-size: 46px;
+}
+
+#coin-detail-page .coin-detail-values {
+    margin-top: 30px;
+}
+
+#coin-detail-page .coin-detail-values .col {
+    text-align: center;
+    color: #2c3e50;
+    border-right: 1px solid lightgray;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#coin-detail-page .coin-detail-values .col:last-child {
+    text-align: center;
+    color: #2c3e50;
+    border: 0;
+}
+
+#coin-detail-page .wrapper {
+    padding: 60px 0;
+    background: #ecf0f1;
+}
+
+#coin-detail-page .graph-wrapper .graph-title {
+    padding: 60px 0;
+    color: #2c3e50;
+    text-align: center; 
+}
+
+#coin-detail-page .rank-flag {
+    color: white;
+    background-color: #2ecc71;
+    width: 52px;
+    margin: 0px 14px;
+    position: relative;
+    top: -2px;
+    text-align: center;
+    vertical-align: top;
+    margin: 0 auto;
+    font-size: 16px;
+    padding-top: 20px;
+}
+
+#coin-detail-page .rank-flag .rank-triangle {
+    width: 0px;
+    height: 0px;
+    border-left: 27px solid transparent;
+    border-right: 27px solid transparent;
+    border-bottom: 27px solid #ecf0f1;
+}
+
 /* Base Styles */
 body {
   margin: 0;
@@ -297,3 +391,4 @@ border: solid rgb(243,167,18);
   font-size: 1em;
 }
 }
+
