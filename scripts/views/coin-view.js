@@ -12,10 +12,11 @@ var app = app || {};
   coins.forEach(coin => {
       $('#coin-name tbody').append(template(coin));
   })
-  $('#coin-list').on('click', 'tr', event => {
+  $('#coin-list').off().on('click', 'tr', event => {
       let coinId = $(event.target).data('id');
       $('#coin-list').hide();
       page(`/coin/${coinId.toUpperCase()}`);
+
   })
 
   let socket = io.connect('https://coincap.io'); 
