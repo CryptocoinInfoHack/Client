@@ -38,25 +38,25 @@
   </script>
 
   <script id="coin-detail-template" type="text/x-handlebars-template">
-    <div class="wrapper">
+    <div class="coin-detail-wrapper">
       <div class="container">
         <h1 class="coin-detail-page-title">{{display_name}} Daily Exchange Volume</h1>
         <div data-id="{{short}}" class="coin-detail-name-wrapper">
           <div class="rank">
             <div class="rank-flag">
               <div>Rank</div>
-              <div class="coin-rank">{{rank}}</div>
+              <div data-id="rank"class="coin-rank">{{rank}}</div>
               <div class="rank-triangle"></div>
             </div>
           </div>
-          <div class="coin-detail-name">${{price}}({{cap24hrChange}})</div>
+          <div data-id="price" class="coin-detail-name">${{price}}({{cap24hrChange}})</div>
         </div>
 
         <div class="coin-detail-values">
           <div class="row">
-            <div class="col col-sm-4">MARKET CAP: ${{market_cap}}</div>
-            <div class="col col-sm-4">24 HR VOLUME: ${{volume}}</div>
-            <div class="col col-sm-4">AVAILABLE SUPPLY: ${{supply}}</div>
+            <div data-id="mktcap" class="col col-sm-4">MARKET CAP: ${{market_cap}}</div>
+            <div data-id="volume" class="col col-sm-4">24 HR VOLUME: ${{volume}}</div>
+            <div data-id="supply" class="col col-sm-4">AVAILABLE SUPPLY: ${{supply}}</div>
           </div>
         </div>
       </div>

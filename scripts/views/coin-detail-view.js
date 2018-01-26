@@ -56,6 +56,7 @@ var app = app || {};
         }
       });
     }
+  
 
     module.coinDetailView = coinDetailView;
     
