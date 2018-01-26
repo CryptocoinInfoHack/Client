@@ -16,11 +16,16 @@
   max-height: none;
   height: auto;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 30%;
+  left: 25%;
   background-color: white;
   padding: 15px;
   border-radius: 5px;
+}
+
+.ui-dialog #intro label {
+  margin-bottom: 20px;
+  font-size: 18px;
 }
 #searchInput {
   display: block;
@@ -200,6 +205,12 @@ margin-bottom: 40px;
   animation-duration: 3s;
   -webkit-animation-duration: 3s;
   -moz-animation-duration: 3s;
+}
+
+#intro {
+-webkit-animation-delay: 2s;
+-webkit-animation-duration: 3s;
+-moz-animation-duration: 3s;
 }
 
 #coin-detail-page .coin-detail-name .coin-detail-id {
