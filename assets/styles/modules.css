@@ -16,11 +16,16 @@
   max-height: none;
   height: auto;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 30%;
+  left: 25%;
   background-color: white;
   padding: 15px;
   border-radius: 5px;
+}
+
+.ui-dialog #intro label {
+  margin-bottom: 20px;
+  font-size: 18px;
 }
 #searchInput {
   display: block;
@@ -136,6 +141,22 @@ color: white;
   border-bottom: 27px solid #ecf0f1;
 }
 
+.sub-heading {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.content-body {
+  margin: 0 0 10px;
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+#howto-page {
+  padding-top: 90px;
+}
+
+#howto-page .howto-heading,
 #coin-list .home-heading,
 #news-page .news-heading {
   position: relative;
@@ -148,6 +169,12 @@ color: white;
   background-repeat: no-repeat;
 }
 
+#howto-page .howto-heading {
+  background: url('../../images/pexels-photo-730564.jpeg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 #news-page .news-heading {
   background: url('../../images/andre-francois-518771.jpg');
   background-attachment: fixed;
@@ -155,6 +182,7 @@ color: white;
   background-repeat: no-repeat;
 }
 
+#howto-page .howto-heading .title-wrapper,
 #coin-list .home-heading .title-wrapper,
 #news-page .news-heading .title-wrapper {
 text-align: center;
@@ -168,6 +196,7 @@ background: rgba(0, 0, 0, 0.6);
 margin-bottom: 40px;
 }
 
+#howto-page .howto-heading .page-title,
 #coin-list .home-heading .page-title,
 #news-page .news-heading .page-title {
   color: white;
@@ -176,6 +205,12 @@ margin-bottom: 40px;
   animation-duration: 3s;
   -webkit-animation-duration: 3s;
   -moz-animation-duration: 3s;
+}
+
+#intro {
+-webkit-animation-delay: 2s;
+-webkit-animation-duration: 3s;
+-moz-animation-duration: 3s;
 }
 
 #coin-detail-page .coin-detail-name .coin-detail-id {

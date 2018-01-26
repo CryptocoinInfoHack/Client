@@ -22,7 +22,7 @@ page('/', () => {
 })
 page('/coin/:id',(ctx) => {
 
-    $('#coin-detail-page').empty();
+    $('#coin-detail-page').remove()
     console.log(ctx.params.id)
     app.Coin.fetchOne(ctx.params.id).then(coin => {
         console.log('this is from inside single coin', coin);
