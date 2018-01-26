@@ -54,5 +54,3 @@ var app = app || {};
 	}
 });
 })(app)
-
-// HEADER FUNCTIONALITY
