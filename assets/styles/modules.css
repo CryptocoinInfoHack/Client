@@ -28,6 +28,7 @@
   height: 36px;
   border: 0;
 }
+
 #news-page {
   padding-top: 100px;
 }
@@ -134,19 +135,31 @@ color: white;
   border-right: 27px solid transparent;
   border-bottom: 27px solid #ecf0f1;
 }
+
+#coin-list .home-heading,
 #news-page .news-heading {
   position: relative;
 }
+
+#coin-list .home-heading {
+  background: url('https://www.fortunebuilders.com/wp-content/uploads/2015/07/real-estate-benefits.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 #news-page .news-heading {
   background: url('../../images/andre-francois-518771.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+#coin-list .home-heading .title-wrapper,
 #news-page .news-heading .title-wrapper {
 text-align: center;
 width: 100%;
-padding: 150px 0;
+padding: 200px 0;
 top: 0;
 left: 0;
 width: 100%;
@@ -154,6 +167,8 @@ height: 100%;
 background: rgba(0, 0, 0, 0.6);
 margin-bottom: 40px;
 }
+
+#coin-list .home-heading .page-title,
 #news-page .news-heading .page-title {
   color: white;
   font-size: 56px;
