@@ -415,6 +415,13 @@ height: 50%;
   padding-left: 5%;
   padding-right: 5%;
 }
+
+#coin-header th {
+  font-weight: bold;
+  font-size: 12px;
+  border-bottom: 1px solid #868686;
+  color: #485365;
+}
 tbody{
   background-color: white;
   /* width: 250px; */
