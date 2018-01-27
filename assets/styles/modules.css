@@ -253,6 +253,9 @@ background: rgba(0, 0, 0, 0.4);
 margin-bottom: 40px;
 }
 
+.page-title {
+  color: white;
+}
 #howto-page .howto-heading .page-title,
 #coin-list .home-heading .page-title,
 #news-page .news-heading .page-title,
