@@ -53,6 +53,12 @@
 #coin-detail-page {
   padding-top: 90px;
 }
+
+.coin-detail-wrapper {
+  background: #ecf0f1;
+  padding: 90px 0;
+}
+
 #news-list .row .meta {
   margin-bottom: 10px;
   color: #8c8c8c;
