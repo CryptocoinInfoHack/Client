@@ -4,8 +4,9 @@ var app = app || {};
 const howToView = {};
 
 howToView.init = () => {
-  $('.page').hide();
-  $('#how-to-page').show();
+
+   $('.page').hide();
+ $('#how-to-page').show();
 }
 
 
@@ -22,6 +23,7 @@ if (!localStorage.getItem('beenHere')){
      $('#intro').hide();
      console.log('been here is here')
  }
+
 
 $(".ui-dialog-titlebar").hide()
 $('#intro').on('click','button',function(e){
@@ -42,4 +44,4 @@ $('#intro').on('click','button',function(e){
         // Target your .container, .wrapper, .post, etc.
     $("#howto-page").fitVids();
  })
- 
+
