@@ -38,11 +38,9 @@ page('/coin/:id',(ctx) => {
         if(tradeMsg.message.coin == ctx.params.id){
             console.log('individual coin update',tradeMsg.message.msg.price)
             let coin = tradeMsg.message.coin;
-            console.log('checking id',coin)
+            console.log('checking id', tradeMsg)
             
-            $(`#coin-detail-page div[data-id="price"]`).html("$" + tradeMsg.message.msg.price);
-            console.log('price',tradeMsg.message.msg.price)
-            $(`#coin-detail-page div[data-id="rank"]`).html("$" + tradeMsg.message.msg.rank);
+            $(`#coin-detail-page div[data-id="price"] .coin-detail-price`).html("$" + tradeMsg.message.msg.price);
             console.log('price',tradeMsg.message.msg.price)
             $(`#coin-detail-page div[data-id="cap24hrChange"]`).html("$" + tradeMsg.message.msg.cap24hrChange);
             console.log('price',tradeMsg.message.msg.cap24hrChange)

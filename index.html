@@ -27,7 +27,7 @@
       <td data-id="vwapData" class="filter mobile">${{vwapData}}</td>
       <td data-id="supply" class="filter mobile">{{supply}}</td>
       <td data-id="volume" class="filter mobile">${{volume}}</td>
-      <td data-id="cap24hrChange" class="filter mobile">%{{cap24hrChange}}</td>
+      <td data-id="cap24hrChange" class="filter mobile">{{cap24hrChange}}%</td>
     </tr>
   </script>
 
@@ -49,7 +49,7 @@
               <div class="rank-triangle"></div>
             </div>
           </div>
-          <div data-id="price" class="coin-detail-name">${{price}}({{cap24hrChange}})</div>
+          <div data-id="price" class="coin-detail-name"><span class="coin-detail-price">${{price}}</span>({{cap24hrChange}})</div>
         </div>
 
         <div class="coin-detail-values">
@@ -183,7 +183,7 @@
         <option value="vwapData">24 hrs VWAP</option>
         <option value="supply">Available Supply</option>
         <option value="volume">24 hr. Volume</option>
-        <option value="cap24hrChange">% 24 hr</option>
+        <option value="cap24hrChange">%24 hr</option>
       </select>
 
       <input type="text" id="searchInput" onkeyup="searchCoin()" placeholder="Search for coin names.." title="Type in a name">

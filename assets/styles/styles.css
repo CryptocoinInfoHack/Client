@@ -9,4 +9,44 @@
     margin-bottom: 30px;
 }
 
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.flash-red {
+  -webkit-animation: flash-red .25s linear;
+  animation: flash-red .25s linear;
+}
+
+.flash-green {
+  -webkit-animation: flash-green .25s linear;
+  animation: flash-green .25s linear;
+}
+
+@-webkit-keyframes flash-green {
+	0% { background-color: rgba(64, 249, 104, .1); } 
+	50% { background-color: rgba(64, 249, 104, .2); } 
+	100% { background-color: rgba(64, 249, 104, .3); }
+}
+@keyframes flash-green {
+	0% { background-color: rgba(64, 249, 104, .1); } 
+	50% { background-color: rgba(64, 249, 104, .2); } 
+	100% { background-color: rgba(64, 249, 104, .3); }
+}
+
+@-webkit-keyframes flash-red {
+	0% { background-color: rgb(255, 101, 101, .1); } 
+	50% { background-color: rgb(255, 101, 101, .2); } 
+	100% { background-color: rgb(255, 101, 101, .3); }
+}
+@keyframes flash-red {
+	0% { background-color: rgb(255, 101, 101, .1); } 
+	50% { background-color: rgb(255, 101, 101, .2); } 
+	100% { background-color: rgb(255, 101, 101, .3); }
+}
+
 
