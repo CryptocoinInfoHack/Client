@@ -174,19 +174,30 @@
         <h1 class="page-title animated fadeIn">Crypto Coin Hack</h1>
       </div>
     </div>
-    <div id="filter">
-      <select>
-        <option>Name</option>
-        <option value="mktcap">Market Cap</option>
-        <option value="price">Price</option>
-        <option value="vwapData">24 hrs VWAP</option>
-        <option value="supply">Available Supply</option>
-        <option value="volume">24 hr. Volume</option>
-        <option value="cap24hrChange">%24 hr</option>
-      </select>
 
-      <input type="text" id="searchInput" onkeyup="searchCoin()" placeholder="Search for coin names.." title="Type in a name">
+    <div class="filter-wrapper row">
+      <div class="col-xs-6">
+        <div id="filter">
+          <i class="fa fa-caret-down"></i>
+          <select>
+            <option>Name</option>
+            <option value="mktcap">Market Cap</option>
+            <option value="price">Price</option>
+            <option value="vwapData">24 hrs VWAP</option>
+            <option value="supply">Available Supply</option>
+            <option value="volume">24 hr. Volume</option>
+            <option value="cap24hrChange">%24 hr</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="search-wrapper">
+          <i class="fa fa-search"></i>
+          <input type="text" id="searchInput" onkeyup="searchCoin()" placeholder="Search for coin names.." title="Type in a name">
+        </div>
+      </div>
     </div>
+
     <div>
       <table id="coin-name" class="table table-stripped">
         <tbody class="">
