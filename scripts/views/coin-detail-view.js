@@ -18,7 +18,6 @@ var app = app || {};
     let labels = history.market_cap.map(arr => {
       return app.Coin.getCurrentTimeFromStamp(arr[0]);
     })
-    console.log(labels);
     history.market_cap.unshift(['x', 'y']);
     console.log('unshift try: ', history.market_cap);
     let keys = history.market_cap.shift();

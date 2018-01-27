@@ -12,7 +12,7 @@ var app = app || {};
   coins.forEach(coin => {
       $('#coin-name tbody').append(template(coin));
   })
-  $('#coin-list').off().on('click', 'tr', event => {
+  $('#coin-list').off().on('click', 'tr td:first-child', event => {
       let coinId = $(event.target).data('id');
       $('#coin-list').hide();
       page(`/coin/${coinId.toUpperCase()}`);
@@ -78,15 +78,13 @@ var app = app || {};
 
  module.coinsListView = coinsListView;
 
- $(document).on("scroll", function () {
+  $(document).on("scroll", function () {
 	if ($(document).scrollTop() > 5) {
 		$("header").addClass("small");
     $(".nav").addClass("small2");
-    // $("header").removeClass("section")
 	} else {
 		$("header").removeClass("small");
      $(".nav").removeClass("small2");
-    // $("header").addClass("section");
 	}
-});
+  });
 })(app)

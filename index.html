@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="assets/bootstrap-tour-master/build/css/bootstrap-tour-standalone.min.css" rel="stylesheet">
 
   <!-- Google Fonts -->
   <link href='https://fonts.googleapis.com/css?family=Lobster|Raleway:400,200' rel='stylesheet' type='text/css'>
@@ -175,19 +174,30 @@
         <h1 class="page-title animated fadeIn">Crypto Coin Hack</h1>
       </div>
     </div>
-    <div id="filter">
-      <select>
-        <option>Name</option>
-        <option value="mktcap">Market Cap</option>
-        <option value="price">Price</option>
-        <option value="vwapData">24 hrs VWAP</option>
-        <option value="supply">Available Supply</option>
-        <option value="volume">24 hr. Volume</option>
-        <option value="cap24hrChange">%24 hr</option>
-      </select>
 
-      <input type="text" id="searchInput" onkeyup="searchCoin()" placeholder="Search for coin names.." title="Type in a name">
+    <div class="filter-wrapper row">
+      <div class="col-xs-6">
+        <div id="filter">
+          <i class="fa fa-caret-down"></i>
+          <select>
+            <option>Name</option>
+            <option value="mktcap">Market Cap</option>
+            <option value="price">Price</option>
+            <option value="vwapData">24 hrs VWAP</option>
+            <option value="supply">Available Supply</option>
+            <option value="volume">24 hr. Volume</option>
+            <option value="cap24hrChange">%24 hr</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="search-wrapper">
+          <i class="fa fa-search"></i>
+          <input type="text" id="searchInput" onkeyup="searchCoin()" placeholder="Search for coin names.." title="Type in a name">
+        </div>
+      </div>
     </div>
+
     <div>
       <table id="coin-name" class="table table-stripped">
         <tbody class="">
@@ -245,7 +255,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.2.0/jquery.fitvids.min.js"></script>
-  <script src="assets/bootstrap-tour-master/build/js/bootstrap-tour-standalone.min.js"></script>
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.slim.js"></script>
   <script src="scripts/nav.js"></script>
