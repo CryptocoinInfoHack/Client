@@ -12,7 +12,7 @@ var app = app || {};
   coins.forEach(coin => {
       $('#coin-name tbody').append(template(coin));
   })
-  $('#coin-list').off().on('click', 'tr', event => {
+  $('#coin-list').off().on('click', 'tr td:first-child', event => {
       let coinId = $(event.target).data('id');
       $('#coin-list').hide();
       page(`/coin/${coinId.toUpperCase()}`);
@@ -20,13 +20,48 @@ var app = app || {};
   })
 
   let socket = io.connect('https://coincap.io'); 
-    socket.on('trades', tradeMsg => {
-        let coin = tradeMsg.coin;
-        $(`#coin-list tr[data-id="${coin}"] td[data-id="mktcap"]`).html("$" + tradeMsg.message.msg.mktcap);
-        $(`#coin-list tr[data-id="${coin}"] td[data-id="supply"]`).html(tradeMsg.message.msg.supply);
-        $(`#coin-list tr[data-id="${coin}"] td[data-id="price"]`).html("$" + tradeMsg.message.msg.price);
-        $(`#coin-list tr[data-id="${coin}"] td[data-id="vwapData"]`).html("$" + tradeMsg.message.msg.vwapData);
-        $(`#coin-list tr[data-id="${coin}"] td[data-id="cap24hrChange"]`).html("%" + tradeMsg.message.msg.cap24hrChange);
+
+  let currCap = 0;
+  let currvwapData = 0;
+  let currPrice = 0;
+  socket.on('trades', tradeMsg => {
+    let coin = tradeMsg.coin;
+
+    if(tradeMsg.message.msg.mktcap > currCap) {
+        $(`#coin-list tr[data-id="${coin}"] td[data-id="mktcap"]`).removeClass('red').addClass('green');
+    } else if(tradeMsg.message.msg.mktcap < currCap) {
+        $(`#coin-list tr[data-id="${coin}"] td[data-id="mktcap"]`).addClass('red').removeClass('green');
+    }
+
+    $(`#coin-list tr[data-id="${coin}"] td[data-id="mktcap"]`).html("$" + tradeMsg.message.msg.mktcap);
+    currCap = tradeMsg.message.msg.mktcap; 
+
+    $(`#coin-list tr[data-id="${coin}"] td[data-id="supply"]`).html(tradeMsg.message.msg.supply);
+
+    if(tradeMsg.message.msg.price > currPrice) {
+        $(`#coin-list tr[data-id="${coin}"] td[data-id="price"]`).removeClass('red').addClass('green');
+    } else if(tradeMsg.message.msg.price < currPrice) {
+        $(`#coin-list tr[data-id="${coin}"] td[data-id="price"]`).addClass('red').removeClass('green');
+    }
+
+    $(`#coin-list tr[data-id="${coin}"] td[data-id="price"]`).html("$" + tradeMsg.message.msg.price);
+    currPrice = tradeMsg.message.msg.price; 
+
+    if(tradeMsg.message.msg.vwapData > currvwapData) {
+        $(`#coin-list tr[data-id="${coin}"] td[data-id="vwapData"]`).removeClass('red').addClass('green');
+    } else if(tradeMsg.message.msg.vwapData < currvwapData) {
+        $(`#coin-list tr[data-id="${coin}"] td[data-id="vwapData"]`).addClass('red').removeClass('green');
+    }
+
+    $(`#coin-list tr[data-id="${coin}"] td[data-id="vwapData"]`).html("$" + tradeMsg.message.msg.vwapData);
+    currvwapData = tradeMsg.message.msg.vwapData;
+    
+    if(Math.sign(tradeMsg.message.msg.cap24hrChange) === -1) {
+        $(`#coin-list tr[data-id="${coin}"] td[data-id="cap24hrChange"]`).removeClass('green').addClass('red'); 
+    } else if(Math.sign(tradeMsg.message.msg.cap24hrChange) === 1) {
+        $(`#coin-list tr[data-id="${coin}"]`).removeClass('red').addClass('green'); 
+    }
+    $(`#coin-list tr[data-id="${coin}"] td[data-id="cap24hrChange"]`).html(tradeMsg.message.msg.cap24hrChange + "%");
   });
 
   $('#coin-list').show();

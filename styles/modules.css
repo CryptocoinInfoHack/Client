@@ -157,3 +157,13 @@ background-color: rgb(219,43,57);
 margin-left: .1%;
 margin-bottom: .2%;
 }
+
+
+#crypto-nav button {
+  width: 50px;
+}
+#crypto-nav button div {
+  height: 3px;
+  background-color: black;
+}
+

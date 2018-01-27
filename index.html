@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="assets/bootstrap-tour-master/build/css/bootstrap-tour-standalone.min.css" rel="stylesheet">
 
   <!-- Google Fonts -->
   <link href='https://fonts.googleapis.com/css?family=Lobster|Raleway:400,200' rel='stylesheet' type='text/css'>
@@ -27,7 +26,7 @@
       <td data-id="vwapData" class="filter mobile">${{vwapData}}</td>
       <td data-id="supply" class="filter mobile">{{supply}}</td>
       <td data-id="volume" class="filter mobile">${{volume}}</td>
-      <td data-id="cap24hrChange" class="filter mobile">%{{cap24hrChange}}</td>
+      <td data-id="cap24hrChange" class="filter mobile">{{cap24hrChange}}%</td>
     </tr>
   </script>
 
@@ -38,25 +37,25 @@
   </script>
 
   <script id="coin-detail-template" type="text/x-handlebars-template">
-    <div class="wrapper">
+    <div class="coin-detail-wrapper">
       <div class="container">
         <h1 class="coin-detail-page-title">{{display_name}} Daily Exchange Volume</h1>
         <div data-id="{{short}}" class="coin-detail-name-wrapper">
           <div class="rank">
             <div class="rank-flag">
               <div>Rank</div>
-              <div class="coin-rank">{{rank}}</div>
+              <div data-id="rank"class="coin-rank">{{rank}}</div>
               <div class="rank-triangle"></div>
             </div>
           </div>
-          <div class="coin-detail-name">${{price}}({{cap24hrChange}})</div>
+          <div data-id="price" class="coin-detail-name"><span class="coin-detail-price">${{price}}</span>({{cap24hrChange}})</div>
         </div>
 
         <div class="coin-detail-values">
           <div class="row">
-            <div class="col col-sm-4">MARKET CAP: ${{market_cap}}</div>
-            <div class="col col-sm-4">24 HR VOLUME: ${{volume}}</div>
-            <div class="col col-sm-4">AVAILABLE SUPPLY: ${{supply}}</div>
+            <div data-id="mktcap" class="col col-sm-4">MARKET CAP: ${{market_cap}}</div>
+            <div data-id="volume" class="col col-sm-4">24 HR VOLUME: ${{volume}}</div>
+            <div data-id="supply" class="col col-sm-4">AVAILABLE SUPPLY: ${{supply}}</div>
           </div>
         </div>
       </div>
@@ -87,13 +86,32 @@
 
 <body>
   <header>
-    <h1 class="logo">CryptoInfoHack</h1>
-    <nav class="nav">
-      <a href="./About_Us">About Us</a>
-      <a href="./">Home</a>      
-      <a href="./news">News</a>
-      <a href="./howToPage">Crypto Info</a>
-    </nav>
+
+
+    <div id="myNav" class="overlay">
+      <!-- Button to close the overlay navigation -->
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <!-- Overlay content -->
+      <div class="overlay-content">
+        <nav class="nav">
+          <ul id="crypto-links">
+            <li><a href="./About_Us">About Us</a></li>
+            <li><a href="./news">News</a></li>
+            <li><a href="./">Home</a></li>
+            <li><a href="./howToPage">Crypto Info</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div id="crypto-nav clearfix">
+      <h1 class="logo">CryptoInfoHack</h1>
+      <button onclick="openNav()" id="navbar-toggle">
+        <div></div>
+        <div></div>
+        <div></div>
+      </button>
+    </div>
+    
   </header>
   <section class="zero"></section>
   <!-- <div class="superZero">
@@ -192,7 +210,7 @@
         <option value="vwapData">24 hrs VWAP</option>
         <option value="supply">Available Supply</option>
         <option value="volume">24 hr. Volume</option>
-        <option value="cap24hrChange">% 24 hr</option>
+        <option value="cap24hrChange">%24 hr</option>
       </select>
 
       <input type="text" id="searchInput" onkeyup="searchCoin()" placeholder="Search for coin names.." title="Type in a name">
@@ -225,6 +243,7 @@
       </div>
       <div class="container">
         <h2 class="sub-heading">Crypto currency is a rather complex form of digital currency that is based around cryptography. We could give you a long detailed explaination full of advanced math diagrams and lovely charts that neither of use would get, but that would be boring. Instead, here are a couple of videos to help you better understand things.</h2> 
+
         <div class="row">
           <div class="col-sm-6"><iframe width="560" height="315" src="https://www.youtube.com/embed/KP_hGPQVLpA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
           <div class="col-sm-6"><iframe width="560" height="315" src="https://www.youtube.com/embed/kubGCSj5y3k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
@@ -254,9 +273,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.2.0/jquery.fitvids.min.js"></script>
+
   <script src="assets/bootstrap-tour-master/build/js/bootstrap-tour-standalone.min.js"></script>
+
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.slim.js"></script>
+  <script src="scripts/nav.js"></script>
   <script src="scripts/views/how-to-view.js"></script>
   <script src="scripts/fitvids-code.js"></script>
   <script src="scripts/models/coins.js"></script>

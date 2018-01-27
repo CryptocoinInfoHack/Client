@@ -87,13 +87,32 @@
 
 <body>
   <header>
-    <h1 class="logo">CryptoInfoHack</h1>
-    <nav class="nav">
-      <a href="./About_Us">About Us</a>
-      <a href="./">Home</a>      
-      <a href="./news">News</a>
-      <a href="./howToPage">Crypto Info</a>
-    </nav>
+
+    <div id="myNav" class="overlay">
+      <!-- Button to close the overlay navigation -->
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <!-- Overlay content -->
+      <div class="overlay-content">
+        <nav class="nav">
+          <ul id="crypto-links">
+            <li><a href="./About_Us">About Us</a></li>
+            <li><a href="./news">News</a></li>
+            <li><a href="./">Home</a></li>
+            <li><a href="./howToPage">Crypto Info</a></li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div id="crypto-nav clearfix">
+      <h1 class="logo">CryptoInfoHack</h1>
+      <button onclick="openNav()" id="navbar-toggle">
+        <div></div>
+        <div></div>
+        <div></div>
+      </button>
+    </div>
+    
   </header>
   <section class="zero"></section>
   <!-- <div class="superZero">
@@ -109,6 +128,7 @@
 
 
   <section id="about-us-page" class="page">
+
     <div class="container">
     <div class="about-us-heading">
       <div class="title-wrapper">
@@ -177,7 +197,9 @@
       </div>
   </section>
 
-  <section id="coin-list" class="page one">
+
+  <section id="coin-list" class="page two">
+
     <div class="home-heading">
       <!-- <img src="images/andre-francois-518771.jpg" class="img-responsive" /> -->
       <div class="title-wrapper">
@@ -225,6 +247,7 @@
       </div>
       <div class="container">
         <h2 class="sub-heading">Crypto currency is a rather complex form of digital currency that is based around cryptography. We could give you a long detailed explaination full of advanced math diagrams and lovely charts that neither of use would get, but that would be boring. Instead, here are a couple of videos to help you better understand things.</h2> 
+
         <div class="row">
           <div class="col-sm-6"><iframe width="560" height="315" src="https://www.youtube.com/embed/KP_hGPQVLpA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
           <div class="col-sm-6"><iframe width="560" height="315" src="https://www.youtube.com/embed/kubGCSj5y3k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
@@ -257,6 +280,7 @@
   <script src="assets/bootstrap-tour-master/build/js/bootstrap-tour-standalone.min.js"></script>
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.slim.js"></script>
+  <script src="scripts/nav.js"></script>
   <script src="scripts/views/how-to-view.js"></script>
   <script src="scripts/fitvids-code.js"></script>
   <script src="scripts/models/coins.js"></script>
@@ -272,4 +296,6 @@
 
 </body>
 
+
 </html>
+

@@ -1,10 +1,10 @@
-
 var app = app || {};
 
 (module => {
 const howToView = {};
 
 howToView.init = () => {
+
    $('.page').hide();
  $('#how-to-page').show();
 }
@@ -24,10 +24,8 @@ if (!localStorage.getItem('beenHere')){
      console.log('been here is here')
  }
 
- $(".ui-dialog-titlebar").hide()
 
-    
-      
+$(".ui-dialog-titlebar").hide()
 $('#intro').on('click','button',function(e){
       e.preventDefault();
       let answer = $(event.target).attr('id')
@@ -37,7 +35,6 @@ $('#intro').on('click','button',function(e){
     $('.ui-dialog').hide();
     } else if(answer === 'no') {
       localStorage.setItem('beenHere',true)
-      alert('Welcome you bad ombre!')
       $('.page').hide()
       $('#intro').hide()
       $('#howThisWorks').show()
@@ -48,5 +45,3 @@ $('#intro').on('click','button',function(e){
     $("#howto-page").fitVids();
  })
 
- 
-//  $('.page').hide()
