@@ -9,6 +9,5 @@ var app = app || {};
   $('#about-us-page').show();
  }
  
-
  module.aboutUsView = aboutUsView;
 })(app)
